@@ -1,0 +1,141 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "o_pcSel",
+					"strict" : false
+				},
+				{
+					"name" : "o_opImm[0]",
+					"strict" : false
+				},
+				{
+					"name" : "o_opImm[1]",
+					"strict" : false
+				},
+				{
+					"name" : "o_opImm[2]",
+					"strict" : false
+				},
+				{
+					"name" : "o_brUnsigned",
+					"strict" : false
+				},
+				{
+					"name" : "o_opaSel",
+					"strict" : false
+				},
+				{
+					"name" : "o_opbSel",
+					"strict" : false
+				},
+				{
+					"name" : "o_aluOp[0]",
+					"strict" : false
+				},
+				{
+					"name" : "o_aluOp[1]",
+					"strict" : false
+				},
+				{
+					"name" : "o_aluOp[2]",
+					"strict" : false
+				},
+				{
+					"name" : "o_aluOp[3]",
+					"strict" : false
+				},
+				{
+					"name" : "o_memWrEnable",
+					"strict" : false
+				},
+				{
+					"name" : "o_wbSel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "o_wbSel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "o_rdWrEnable",
+					"strict" : false
+				},
+				{
+					"name" : "o_mask[0]",
+					"strict" : false
+				},
+				{
+					"name" : "o_mask[1]",
+					"strict" : false
+				},
+				{
+					"name" : "o_mask[2]",
+					"strict" : false
+				},
+				{
+					"name" : "o_mask[3]",
+					"strict" : false
+				},
+				{
+					"name" : "o_mask[4]",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[6]",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[4]",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[5]",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[2]",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[0]",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[1]",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[14]",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[12]",
+					"strict" : false
+				},
+				{
+					"name" : "i_brlLess",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[13]",
+					"strict" : false
+				},
+				{
+					"name" : "i_brEqual",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[3]",
+					"strict" : false
+				},
+				{
+					"name" : "i_inst[30]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

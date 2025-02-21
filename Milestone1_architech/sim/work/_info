@@ -1,0 +1,173 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ntkhi/Desktop/CTMT/Milestone1_architech/sim
+vadder4bit
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1739137235
+!i10b 1
+!s100 =:?G9f_24z8`mQ`h?EQD13
+IbAM>BS@GX2MH6ERlOYneG2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 top_sv_unit
+S1
+R0
+Z5 w1738844973
+Z6 8..\scr\top.sv
+Z7 F..\scr\top.sv
+L0 105
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1739137235.000000
+Z10 !s107 .\top_tb.sv|..\scr\top.sv|
+Z11 !s90 ..\scr\top.sv|.\top_tb.sv|
+!i113 1
+Z12 tCvgOpt 0
+vcompare4
+R1
+R2
+!i10b 1
+!s100 BAIbnjYO8V72ATmbV9VU_1
+IZmj7Tkij_mXj?addDl7ZQ0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 115
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vinputDecode
+R1
+R2
+!i10b 1
+!s100 ^Z6:Z<minb1cAfW?CKGJK2
+I_J1MjdBDUH:0=aCD>i72A1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 65
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+ninput@decode
+vregisterSet
+R1
+R2
+!i10b 1
+!s100 6N4>TGVXJ^KiHLBaN=j@@0
+IoG8R;eF^Pn@?oh;iGYlc^1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 90
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+nregister@set
+vsel2bit
+R1
+R2
+!i10b 1
+!s100 ;>jZZ<M_Qg<`R<>Hig87@2
+IQVVIicfoPT@8OMh_Wka^S3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 128
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vtop
+R1
+R2
+!i10b 1
+!s100 b>lTAe7D>>aE?PjKkP7cY3
+IXJiOUX9E96[Y]WD0cZe=43
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vtop_tb
+R1
+R2
+!i10b 1
+!s100 @U3I;5ORZjQ>G4i4ZfR>?2
+I?ImB`IK6:E`0fFg`_2ljg2
+R3
+!s105 top_tb_sv_unit
+S1
+R0
+w1739137153
+8.\top_tb.sv
+F.\top_tb.sv
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12

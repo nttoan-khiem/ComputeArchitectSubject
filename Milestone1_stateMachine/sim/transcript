@@ -1,0 +1,19 @@
+# vsim work.top_tb -c -do "run -all;" 
+# Start time: 04:38:16 on Feb 10,2025
+# Loading sv_std.std
+# Loading work.top_tb
+# Loading work.top
+# run -all
+# [pass] with soda=0, change=000
+# [pass] with soda=1, change=000
+# [pass] with soda=0, change=000
+# [pass] with soda=1, change=000
+# [pass] with soda=1, change=001
+# [pass] with soda=1, change=011
+# [pass] with soda=0, change=000
+# [pass] with soda=0, change=000
+# [pass] with soda=1, change=100
+# ** Note: $finish    : ./top_tb.sv(77)
+#    Time: 1814 ns  Iteration: 0  Instance: /top_tb
+# End time: 04:38:16 on Feb 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
