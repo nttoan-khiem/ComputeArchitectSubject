@@ -78,7 +78,7 @@ always @(*) begin
         4'd1: opImm = 3'b101;  //AUIPC
         4'd2: opImm = 3'b100;  //JAL
         4'd3: opImm = 3'b000;  //JALR
-        4'd4: opImm = 3'b001; //B-format
+        4'd4: opImm = 3'b011; //B-format
         4'd5: opImm = 3'b000;  //L-format
         4'd6: opImm = 3'b010;  //S-format
         4'd7: opImm = opImm_Iformat;  //I-format

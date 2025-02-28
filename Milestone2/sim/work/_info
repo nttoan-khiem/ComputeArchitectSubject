@@ -1,0 +1,104 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ntkhi/Desktop/CTMT/Milestone2/sim
+vcontrol
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1740750780
+!i10b 1
+!s100 I0Re@KA1C;=^Z;;l9ECi`1
+I6Unh@Xj=We0TPenMOSWlS3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 control_sv_unit
+S1
+R0
+w1740749589
+8..\src\control.sv
+F..\src\control.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1740750780.000000
+Z6 !s107 ..\src\control.sv|.\control_tb.sv|
+Z7 !s90 .\control_tb.sv|..\src\control.sv|
+!i113 1
+Z8 tCvgOpt 0
+vcontrol_tb
+R1
+R2
+!i10b 1
+!s100 @ONT[iB@1AmZ1kd2OFRPV2
+IDBbB=z9WR50X2PFXdI:VL3
+R3
+!s105 control_tb_sv_unit
+S1
+R0
+w1740750100
+8.\control_tb.sv
+F.\control_tb.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vgenImm
+R1
+Z9 !s110 1740612811
+!i10b 1
+!s100 OT@RUUHoF;NaaX8<ZhVVC0
+I28QL;6?40Qb2;T<ZIOz<V0
+R3
+!s105 genImm_sv_unit
+S1
+R0
+w1739747050
+8..\src\genImm.sv
+F..\src\genImm.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z10 !s108 1740612811.000000
+Z11 !s107 ..\src\genImm.sv|.\genImm_tb.sv|
+Z12 !s90 .\genImm_tb.sv|..\src\genImm.sv|
+!i113 1
+R8
+ngen@imm
+vgenImm_tb
+R1
+R9
+!i10b 1
+!s100 [N?CWSd4KOO;kFl1IM<oD2
+IdA;cWf]:kh]QW`CfD]6fk3
+R3
+!s105 genImm_tb_sv_unit
+S1
+R0
+w1740612066
+8.\genImm_tb.sv
+F.\genImm_tb.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 1
+R8
+ngen@imm_tb
