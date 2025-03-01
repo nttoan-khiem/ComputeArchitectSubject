@@ -1,118 +1,42 @@
-# vsim work.control_tb -c -do "run -all; exit" 
-# Start time: 20:53:19 on Feb 28,2025
+# vsim work.alu_tb -c -do "run -all; exit" 
+# Start time: 14:25:25 on Mar 01,2025
 # Loading sv_std.std
-# Loading work.control_tb
-# Loading work.control
+# Loading work.alu_tb
+# Loading work.alu
+# Loading work.controlSel
+# Loading work.selOperand
+# Loading work.shiftLeft
+# Loading work.shiftRight
+# Loading work.selOutputAlu
 # run -all
-# Starting control Testbench...
-# PASS: i_inst=0x003e80b7
-# ------------------------------------------------
-# PASS: i_inst=0xffbb42b7
-# ------------------------------------------------
-# PASS: i_inst=0x01388197
-# ------------------------------------------------
-# PASS: i_inst=0xfa628917
-# ------------------------------------------------
-# PASS: i_inst=0x710022ef
-# ------------------------------------------------
-# PASS: i_inst=0x8f1fdf6f
-# ------------------------------------------------
-# PASS: i_inst=0x3e810367
-# ------------------------------------------------
-# PASS: i_inst=0xc18f86e7
-# ------------------------------------------------
-# PASS: i_inst=0x7a2080e3
-# ------------------------------------------------
-# PASS: i_inst=0xea620063
-# ------------------------------------------------
-# PASS: i_inst=0x4c709863
-# ------------------------------------------------
-# PASS: i_inst=0x93e49ee3
-# ------------------------------------------------
-# PASS: i_inst=0xfa80c563
-# ------------------------------------------------
-# PASS: i_inst=0x049acbe3
-# ------------------------------------------------
-# PASS: i_inst=0x4c525963
-# ------------------------------------------------
-# PASS: i_inst=0xb3f257e3
-# ------------------------------------------------
-# PASS: i_inst=0xb3f857e3
-# ------------------------------------------------
-# PASS: i_inst=0x2293ebe3
-# ------------------------------------------------
-# PASS: i_inst=0xddf4e563
-# ------------------------------------------------
-# PASS: i_inst=0x110474e3
-# ------------------------------------------------
-# PASS: i_inst=0xeef4fc63
-# ------------------------------------------------
-# PASS: i_inst=0x10f4f9e3
-# ------------------------------------------------
-# PASS: i_inst=0x3e840383
-# ------------------------------------------------
-# PASS: i_inst=0xc18e0883
-# ------------------------------------------------
-# PASS: i_inst=0x3e8c9303
-# ------------------------------------------------
-# PASS: i_inst=0xc7caa403
-# ------------------------------------------------
-# PASS: i_inst=0x3e844383
-# ------------------------------------------------
-# PASS: i_inst=0xc18fd883
-# ------------------------------------------------
-# PASS: i_inst=0x3e640423
-# ------------------------------------------------
-# PASS: i_inst=0x83f79823
-# ------------------------------------------------
-# PASS: i_inst=0xb5e5a823
-# ------------------------------------------------
-# PASS: i_inst=0x07f48393
-# ------------------------------------------------
-# PASS: i_inst=0xb0a48893
-# ------------------------------------------------
-# PASS: i_inst=0x1740a313
-# ------------------------------------------------
-# PASS: i_inst=0x948fa393
-# ------------------------------------------------
-# PASS: i_inst=0x6b8e3693
-# ------------------------------------------------
-# PASS: i_inst=0x07fac393
-# ------------------------------------------------
-# PASS: i_inst=0x467ce493
-# ------------------------------------------------
-# PASS: i_inst=0x080bf413
-# ------------------------------------------------
-# PASS: i_inst=0x00cb9413
-# ------------------------------------------------
-# PASS: i_inst=0x0106d513
-# ------------------------------------------------
-# PASS: i_inst=0x4060d893
-# ------------------------------------------------
-# PASS: i_inst=0x009100b3
-# ------------------------------------------------
-# PASS: i_inst=0x41f00533
-# ------------------------------------------------
-# PASS: i_inst=0x0004a3b3
-# ------------------------------------------------
-# PASS: i_inst=0x001fb8b3
-# ------------------------------------------------
-# PASS: i_inst=0x0015c8b3
-# ------------------------------------------------
-# PASS: i_inst=0x0058e3b3
-# ------------------------------------------------
-# PASS: i_inst=0x0058f3b3
-# ------------------------------------------------
-# PASS: i_inst=0x001d9233
-# ------------------------------------------------
-# PASS: i_inst=0x0073d233
-# ------------------------------------------------
-# PASS: i_inst=0x41b8d2b3
-# ------------------------------------------------
-# ** Note: $stop    : ./control_tb.sv(391)
-#    Time: 572 ns  Iteration: 0  Instance: /control_tb
-# Break in Module control_tb at ./control_tb.sv line 391
-# Stopped at ./control_tb.sv line 391
-#  exit
-# End time: 20:53:20 on Feb 28,2025, Elapsed time: 0:00:01
+# ==== Starting ALU Testbench ====
+# Test 0 (Addition) PASSED: result = 00000019
+# Test 1 (Subtraction) PASSED: result = 00000005
+# Test 2 (SLT (True)) PASSED: result = 00000001
+# Test 3 (SLT (False)) PASSED: result = 00000000
+# Test 4 (SLTU (True)) PASSED: result = 00000001
+# Test 5 (SLTU (False)) PASSED: result = 00000000
+# Test 6 (XOR) PASSED: result = f00ff00f
+# Test 7 (OR) PASSED: result = ff0fff0f
+# Test 8 (AND) PASSED: result = 0f000f00
+# Test 9 (Shift Left) PASSED: result = 00000004
+# Test 10 (Shift Right Logical) PASSED: result = 00000004
+# Test 11 (Shift Right Arithmetic) PASSED: result = ff000000
+# Test 12 (LUI) PASSED: result = deadbeef
+# Test 13 (Add Zero Operands) PASSED: result = 00000000
+# Test 14 (Sub Zero Result) PASSED: result = 00000000
+# Test 15 (Add Large Positive) PASSED: result = 7fffffff
+# Test 16 (Sub Negative) PASSED: result = fffffff6
+# Test 17 (SLT Negative True) PASSED: result = 00000001
+# Test 18 (SLT Negative False) PASSED: result = 00000000
+# Test 19 (SLTU Large Unsigned False) PASSED: result = 00000000
+# Test 20 (XOR with 0) PASSED: result = a5a5a5a5
+# Test 21 (OR with 0) PASSED: result = 12345678
+# Test 22 (AND with 0) PASSED: result = 00000000
+# Test 23 (Shift Left 31) PASSED: result = 80000000
+# Test 24 (Shift Right Arithmetic 31) PASSED: result = ffffffff
+# ==== All tests PASSED ====
+# ** Note: $finish    : ./alu_tb.sv(137)
+#    Time: 250 ns  Iteration: 0  Instance: /alu_tb
+# End time: 14:25:26 on Mar 01,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
