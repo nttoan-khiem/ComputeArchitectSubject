@@ -1,42 +1,55 @@
-# vsim work.alu_tb -c -do "run -all; exit" 
-# Start time: 14:25:25 on Mar 01,2025
+# vsim work.registerSet_tb -c -do "run -all; exit" 
+# Start time: 14:50:14 on Mar 02,2025
 # Loading sv_std.std
-# Loading work.alu_tb
-# Loading work.alu
-# Loading work.controlSel
-# Loading work.selOperand
-# Loading work.shiftLeft
-# Loading work.shiftRight
-# Loading work.selOutputAlu
+# Loading work.registerSet_tb
+# Loading work.registerSet
+# Loading work.register32bit
+# Loading work.decoder32bit
+# Loading work.mux32
 # run -all
-# ==== Starting ALU Testbench ====
-# Test 0 (Addition) PASSED: result = 00000019
-# Test 1 (Subtraction) PASSED: result = 00000005
-# Test 2 (SLT (True)) PASSED: result = 00000001
-# Test 3 (SLT (False)) PASSED: result = 00000000
-# Test 4 (SLTU (True)) PASSED: result = 00000001
-# Test 5 (SLTU (False)) PASSED: result = 00000000
-# Test 6 (XOR) PASSED: result = f00ff00f
-# Test 7 (OR) PASSED: result = ff0fff0f
-# Test 8 (AND) PASSED: result = 0f000f00
-# Test 9 (Shift Left) PASSED: result = 00000004
-# Test 10 (Shift Right Logical) PASSED: result = 00000004
-# Test 11 (Shift Right Arithmetic) PASSED: result = ff000000
-# Test 12 (LUI) PASSED: result = deadbeef
-# Test 13 (Add Zero Operands) PASSED: result = 00000000
-# Test 14 (Sub Zero Result) PASSED: result = 00000000
-# Test 15 (Add Large Positive) PASSED: result = 7fffffff
-# Test 16 (Sub Negative) PASSED: result = fffffff6
-# Test 17 (SLT Negative True) PASSED: result = 00000001
-# Test 18 (SLT Negative False) PASSED: result = 00000000
-# Test 19 (SLTU Large Unsigned False) PASSED: result = 00000000
-# Test 20 (XOR with 0) PASSED: result = a5a5a5a5
-# Test 21 (OR with 0) PASSED: result = 12345678
-# Test 22 (AND with 0) PASSED: result = 00000000
-# Test 23 (Shift Left 31) PASSED: result = 80000000
-# Test 24 (Shift Right Arithmetic 31) PASSED: result = ffffffff
-# ==== All tests PASSED ====
-# ** Note: $finish    : ./alu_tb.sv(137)
-#    Time: 250 ns  Iteration: 0  Instance: /alu_tb
-# End time: 14:25:26 on Mar 01,2025, Elapsed time: 0:00:01
+# ===== Starting Register File Testbench =====
+# Passed: Register x0 correctly remains 0.
+# Passed: Register x1 = 10
+# Passed: Register x2 = 20
+# Passed: Register x3 = 30
+# Passed: Register x4 = 40
+# Passed: Register x5 = 50
+# Passed: Register x6 = 60
+# Passed: Register x7 = 70
+# Passed: Register x8 = 80
+# Passed: Register x9 = 90
+# Passed: Register x10 = 100
+# Passed: Register x11 = 110
+# Passed: Register x12 = 120
+# Passed: Register x13 = 130
+# Passed: Register x14 = 140
+# Passed: Register x15 = 150
+# Passed: Register x16 = 160
+# Passed: Register x17 = 170
+# Passed: Register x18 = 180
+# Passed: Register x19 = 190
+# Passed: Register x20 = 200
+# Passed: Register x21 = 210
+# Passed: Register x22 = 220
+# Passed: Register x23 = 230
+# Passed: Register x24 = 240
+# Passed: Register x25 = 250
+# Passed: Register x26 = 260
+# Passed: Register x27 = 270
+# Passed: Register x28 = 280
+# Passed: Register x29 = 290
+# Passed: Register x30 = 300
+# Passed: Register x31 = 310
+# Passed: Register x0 remains 0 as expected after write attempt to 32'haabbccdd.
+# Passed: Concurrent read/write: x6 remains unchanged as expected.
+# Passed: Simultaneous write test passed: x7=12345678, x8=87654321
+# Passed: Dual read test passed: x2=20 and x3=30.
+# Passed: Dual read same register passed: Both ports return 32'h00000014
+# Passed: Before update, x15 correctly holds 150.
+# Passed: Before posedge, x15 still holds 150 as expected.
+# Passed: After posedge, x15 successfully updated to 32'hcafeeeee.
+# ===== All tests completed, error_count = 0 =====
+# ** Note: $finish    : ./registerSet_tb.sv(207)
+#    Time: 1146 ns  Iteration: 0  Instance: /registerSet_tb
+# End time: 14:50:14 on Mar 02,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
