@@ -1,55 +1,38 @@
-# vsim work.registerSet_tb -c -do "run -all; exit" 
-# Start time: 14:50:14 on Mar 02,2025
+# vsim work.branchControl_tb -c -do "run -all; exit" 
+# Start time: 22:12:49 on Mar 10,2025
 # Loading sv_std.std
-# Loading work.registerSet_tb
-# Loading work.registerSet
-# Loading work.register32bit
-# Loading work.decoder32bit
-# Loading work.mux32
+# Loading work.branchControl_tb
+# Loading work.branchControl
+# Loading work.xorLogic
+# Loading work.branchLessControl
 # run -all
-# ===== Starting Register File Testbench =====
-# Passed: Register x0 correctly remains 0.
-# Passed: Register x1 = 10
-# Passed: Register x2 = 20
-# Passed: Register x3 = 30
-# Passed: Register x4 = 40
-# Passed: Register x5 = 50
-# Passed: Register x6 = 60
-# Passed: Register x7 = 70
-# Passed: Register x8 = 80
-# Passed: Register x9 = 90
-# Passed: Register x10 = 100
-# Passed: Register x11 = 110
-# Passed: Register x12 = 120
-# Passed: Register x13 = 130
-# Passed: Register x14 = 140
-# Passed: Register x15 = 150
-# Passed: Register x16 = 160
-# Passed: Register x17 = 170
-# Passed: Register x18 = 180
-# Passed: Register x19 = 190
-# Passed: Register x20 = 200
-# Passed: Register x21 = 210
-# Passed: Register x22 = 220
-# Passed: Register x23 = 230
-# Passed: Register x24 = 240
-# Passed: Register x25 = 250
-# Passed: Register x26 = 260
-# Passed: Register x27 = 270
-# Passed: Register x28 = 280
-# Passed: Register x29 = 290
-# Passed: Register x30 = 300
-# Passed: Register x31 = 310
-# Passed: Register x0 remains 0 as expected after write attempt to 32'haabbccdd.
-# Passed: Concurrent read/write: x6 remains unchanged as expected.
-# Passed: Simultaneous write test passed: x7=12345678, x8=87654321
-# Passed: Dual read test passed: x2=20 and x3=30.
-# Passed: Dual read same register passed: Both ports return 32'h00000014
-# Passed: Before update, x15 correctly holds 150.
-# Passed: Before posedge, x15 still holds 150 as expected.
-# Passed: After posedge, x15 successfully updated to 32'hcafeeeee.
-# ===== All tests completed, error_count = 0 =====
-# ** Note: $finish    : ./registerSet_tb.sv(207)
-#    Time: 1146 ns  Iteration: 0  Instance: /registerSet_tb
-# End time: 14:50:14 on Mar 02,2025, Elapsed time: 0:00:00
+# Starting testbench...
+# [Passed] at Time=10000 | rs1=00000010, rs2=00000010, brUnsign=0 -> brLess=0, brEqual=1
+# [Passed] at Time=20000 | rs1=c00f0a10, rs2=c00f0a10, brUnsign=0 -> brLess=0, brEqual=1
+# [Passed] at Time=30000 | rs1=ca0f0a10, rs2=ca0f0a10, brUnsign=0 -> brLess=0, brEqual=1
+# [Passed] at Time=40000 | rs1=ca0fba10, rs2=ca0fba10, brUnsign=1 -> brLess=0, brEqual=1
+# [Passed] at Time=50000 | rs1=fffffff0, rs2=00000010, brUnsign=0 -> brLess=1, brEqual=0
+# [Passed] at Time=60000 | rs1=ffff0ff0, rs2=10000010, brUnsign=0 -> brLess=1, brEqual=0
+# [Passed] at Time=70000 | rs1=ffab0ff0, rs2=00000000, brUnsign=0 -> brLess=1, brEqual=0
+# [Passed] at Time=80000 | rs1=00000020, rs2=00000010, brUnsign=0 -> brLess=0, brEqual=0
+# [Passed] at Time=90000 | rs1=10a00020, rs2=10900010, brUnsign=0 -> brLess=0, brEqual=0
+# [Passed] at Time=100000 | rs1=8fa00020, rs2=80b00010, brUnsign=0 -> brLess=0, brEqual=0
+# [Passed] at Time=110000 | rs1=00000000, rs2=ffffffff, brUnsign=0 -> brLess=0, brEqual=0
+# [Passed] at Time=120000 | rs1=00000010, rs2=80000000, brUnsign=1 -> brLess=1, brEqual=0
+# [Passed] at Time=130000 | rs1=7fff0000, rs2=80000000, brUnsign=1 -> brLess=1, brEqual=0
+# [Passed] at Time=140000 | rs1=7fff0000, rs2=ff000000, brUnsign=1 -> brLess=1, brEqual=0
+# [Passed] at Time=150000 | rs1=f0ff0000, rs2=f1000000, brUnsign=1 -> brLess=1, brEqual=0
+# [Passed] at Time=160000 | rs1=80000000, rs2=00000010, brUnsign=1 -> brLess=0, brEqual=0
+# [Passed] at Time=170000 | rs1=000a0000, rs2=0009ff10, brUnsign=1 -> brLess=0, brEqual=0
+# [Passed] at Time=180000 | rs1=ffffff00, rs2=ffffff10, brUnsign=0 -> brLess=1, brEqual=0
+# [Passed] at Time=190000 | rs1=fff0ff00, rs2=fff7ff10, brUnsign=0 -> brLess=1, brEqual=0
+# [Passed] at Time=200000 | rs1=f0f0ff00, rs2=f1f7ff10, brUnsign=0 -> brLess=1, brEqual=0
+# [Passed] at Time=210000 | rs1=7ef0ff00, rs2=7ff7ff10, brUnsign=0 -> brLess=1, brEqual=0
+# [Passed] at Time=220000 | rs1=ffffff10, rs2=ffffff00, brUnsign=0 -> brLess=0, brEqual=0
+# [Passed] at Time=230000 | rs1=ff5fff10, rs2=ff4fff00, brUnsign=0 -> brLess=0, brEqual=0
+# [Passed] at Time=240000 | rs1=f05fff10, rs2=ef4fff00, brUnsign=0 -> brLess=0, brEqual=0
+# Testbench completed. All tests executed.
+# ** Note: $finish    : ./branchControl_tb.sv(207)
+#    Time: 240 ns  Iteration: 0  Instance: /branchControl_tb
+# End time: 22:12:50 on Mar 10,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

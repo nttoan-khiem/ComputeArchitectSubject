@@ -54,9 +54,81 @@ R10
 R11
 !i113 1
 R12
+vbranchControl
+R1
+Z13 !s110 1741619559
+!i10b 1
+!s100 I=[kMUN7RfoZ1d[^>8g>z1
+IdE4ZT`:YPhanRolU^h:TZ2
+R3
+Z14 !s105 branchControl_sv_unit
+S1
+R0
+Z15 w1741618295
+Z16 8..\src\branchControl.sv
+Z17 F..\src\branchControl.sv
+L0 3
+R8
+r1
+!s85 0
+31
+Z18 !s108 1741619559.000000
+Z19 !s107 ..\src\branchControl.sv|.\branchControl_tb.sv|
+Z20 !s90 .\branchControl_tb.sv|..\src\branchControl.sv|
+!i113 1
+R12
+nbranch@control
+vbranchControl_tb
+R1
+R13
+!i10b 1
+!s100 b>5Jgc>Vn4>Hm?XFK:Yck2
+I;k<GmD7ekTc3Vf299bQEB2
+R3
+Z21 !s105 branchControl_tb_sv_unit
+S1
+R0
+w1741619516
+Z22 8.\branchControl_tb.sv
+Z23 F.\branchControl_tb.sv
+L0 3
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 1
+R12
+nbranch@control_tb
+vbranchLessControl
+R1
+R13
+!i10b 1
+!s100 m@2:m;Kn65jd2OIDgL>Xm3
+I9E06l4GR9=I6fhnMc]IR33
+R3
+R14
+S1
+R0
+R15
+R16
+R17
+L0 43
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 1
+R12
+nbranch@less@control
 vcontrol
 R1
-Z13 !s110 1740750780
+Z24 !s110 1740750780
 !i10b 1
 !s100 I0Re@KA1C;=^Z;;l9ECi`1
 I6Unh@Xj=We0TPenMOSWlS3
@@ -72,14 +144,14 @@ R8
 r1
 !s85 0
 31
-Z14 !s108 1740750780.000000
-Z15 !s107 ..\src\control.sv|.\control_tb.sv|
-Z16 !s90 .\control_tb.sv|..\src\control.sv|
+Z25 !s108 1740750780.000000
+Z26 !s107 ..\src\control.sv|.\control_tb.sv|
+Z27 !s90 .\control_tb.sv|..\src\control.sv|
 !i113 1
 R12
 vcontrol_tb
 R1
-R13
+R24
 !i10b 1
 !s100 @ONT[iB@1AmZ1kd2OFRPV2
 IDBbB=z9WR50X2PFXdI:VL3
@@ -95,9 +167,9 @@ R8
 r1
 !s85 0
 31
-R14
-R15
-R16
+R25
+R26
+R27
 !i113 1
 R12
 vcontrolSel
@@ -126,30 +198,30 @@ R12
 ncontrol@sel
 vdecoder32bit
 R1
-Z17 !s110 1740901802
+Z28 !s110 1740901802
 !i10b 1
 !s100 HDR=N_@49HEkAb?MBkHgT2
 IL22gLT6Wn[4F]nUmmjkP]0
 R3
-Z18 !s105 registerSet_sv_unit
+Z29 !s105 registerSet_sv_unit
 S1
 R0
-Z19 w1739740246
-Z20 8..\src\registerSet.sv
-Z21 F..\src\registerSet.sv
+Z30 w1739740246
+Z31 8..\src\registerSet.sv
+Z32 F..\src\registerSet.sv
 L0 82
 R8
 r1
 !s85 0
 31
-Z22 !s108 1740901802.000000
-Z23 !s107 ..\src\registerSet.sv|.\registerSet_tb.sv|
-Z24 !s90 .\registerSet_tb.sv|..\src\registerSet.sv|
+Z33 !s108 1740901802.000000
+Z34 !s107 ..\src\registerSet.sv|.\registerSet_tb.sv|
+Z35 !s90 .\registerSet_tb.sv|..\src\registerSet.sv|
 !i113 1
 R12
 vgenImm
 R1
-Z25 !s110 1740612811
+Z36 !s110 1740612811
 !i10b 1
 !s100 OT@RUUHoF;NaaX8<ZhVVC0
 I28QL;6?40Qb2;T<ZIOz<V0
@@ -165,15 +237,15 @@ R8
 r1
 !s85 0
 31
-Z26 !s108 1740612811.000000
-Z27 !s107 ..\src\genImm.sv|.\genImm_tb.sv|
-Z28 !s90 .\genImm_tb.sv|..\src\genImm.sv|
+Z37 !s108 1740612811.000000
+Z38 !s107 ..\src\genImm.sv|.\genImm_tb.sv|
+Z39 !s90 .\genImm_tb.sv|..\src\genImm.sv|
 !i113 1
 R12
 ngen@imm
 vgenImm_tb
 R1
-R25
+R36
 !i10b 1
 !s100 [N?CWSd4KOO;kFl1IM<oD2
 IdA;cWf]:kh]QW`CfD]6fk3
@@ -189,85 +261,85 @@ R8
 r1
 !s85 0
 31
-R26
-R27
-R28
+R37
+R38
+R39
 !i113 1
 R12
 ngen@imm_tb
 vmux32
 R1
-R17
+R28
 !i10b 1
 !s100 iB4fmf^EUY@[nMRPBo[c_0
 IKRT:P_<gg:]:3Q^`AF0KJ3
 R3
-R18
+R29
 S1
 R0
-R19
-R20
-R21
+R30
+R31
+R32
 L0 130
 R8
 r1
 !s85 0
 31
-R22
-R23
-R24
+R33
+R34
+R35
 !i113 1
 R12
 vregister32bit
 R1
-R17
+R28
 !i10b 1
 !s100 XB7baIoKj@]`6Xh;@@fzO3
 IMQJR^e:L8[O_M50@o:EOf0
 R3
-R18
+R29
 S1
 R0
-R19
-R20
-R21
+R30
+R31
+R32
 L0 59
 R8
 r1
 !s85 0
 31
-R22
-R23
-R24
+R33
+R34
+R35
 !i113 1
 R12
 vregisterSet
 R1
-R17
+R28
 !i10b 1
 !s100 W4?PNOFWjR8D_kHXdL0EY1
 IP7eU?z>e772;1ZjbHfZWQ1
 R3
-R18
+R29
 S1
 R0
-R19
-R20
-R21
+R30
+R31
+R32
 L0 1
 R8
 r1
 !s85 0
 31
-R22
-R23
-R24
+R33
+R34
+R35
 !i113 1
 R12
 nregister@set
 vregisterSet_tb
 R1
-R17
+R28
 !i10b 1
 !s100 fzhHOl0BK7_:NUS^Ple2Y3
 IVh7d=e9Dgn]XgmP`hNk;00
@@ -283,9 +355,9 @@ R8
 r1
 !s85 0
 31
-R22
-R23
-R24
+R33
+R34
+R35
 !i113 1
 R12
 nregister@set_tb
@@ -385,3 +457,51 @@ R11
 !i113 1
 R12
 nshift@right
+vtb_branchControl
+R1
+!s110 1741617237
+!i10b 1
+!s100 @algL<=VGzlo7Z31F]k^J3
+I2XlRmIj@KaM2GDmOgLE0G0
+R3
+R21
+S1
+R0
+w1741616851
+R22
+R23
+L0 3
+R8
+r1
+!s85 0
+31
+!s108 1741617235.000000
+R19
+R20
+!i113 1
+R12
+ntb_branch@control
+vxorLogic
+R1
+R13
+!i10b 1
+!s100 h9V@b0cXUf?V79gd=_coc2
+IRXYc[IiEjh;U`9l1CZ3Po1
+R3
+R14
+S1
+R0
+R15
+R16
+R17
+L0 31
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 1
+R12
+nxor@logic
