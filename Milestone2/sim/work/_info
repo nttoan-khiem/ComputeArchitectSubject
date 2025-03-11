@@ -267,6 +267,52 @@ R39
 !i113 1
 R12
 ngen@imm_tb
+vmemory
+R1
+Z40 !s110 1741672659
+!i10b 1
+!s100 8T6^N]QEbRe1EL_52WF^Y0
+I`Hcba4JzFdQOBgTDJcdPR3
+R3
+!s105 memory_sv_unit
+S1
+R0
+w1741671683
+8..\src\memory.sv
+F..\src\memory.sv
+L0 1
+R8
+r1
+!s85 0
+31
+Z41 !s108 1741672659.000000
+Z42 !s107 ..\src\memory.sv|.\memory_tb.sv|
+Z43 !s90 .\memory_tb.sv|..\src\memory.sv|
+!i113 1
+R12
+vmemory_tb
+R1
+R40
+!i10b 1
+!s100 7YL>g4e_gH>kY7jBLnV^b3
+I`_G:j1QzUCn0^;S?IBcEY2
+R3
+!s105 memory_tb_sv_unit
+S1
+R0
+w1741672547
+8.\memory_tb.sv
+F.\memory_tb.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R41
+R42
+R43
+!i113 1
+R12
 vmux32
 R1
 R28
