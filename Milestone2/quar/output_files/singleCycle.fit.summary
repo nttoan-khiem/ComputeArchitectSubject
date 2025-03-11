@@ -1,13 +1,13 @@
-Fitter Status : Successful - Tue Mar 11 11:52:12 2025
+Fitter Status : Successful - Tue Mar 11 14:56:35 2025
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : singleCycle
-Top-level Entity Name : bram
+Top-level Entity Name : lsu
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 2,303 / 41,910 ( 5 % )
-Total registers : 4096
-Total pins : 28 / 499 ( 6 % )
+Logic utilization (in ALMs) : 29,726 / 41,910 ( 71 % )
+Total registers : 16544
+Total pins : 275 / 499 ( 55 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
 Total RAM Blocks : 0 / 553 ( 0 % )

@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Tue Mar 11 11:48:57 2025
+Analysis & Synthesis Status : Successful - Tue Mar 11 14:34:47 2025
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : singleCycle
-Top-level Entity Name : bram
+Top-level Entity Name : lsu
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 4096
-Total pins : 28
+Total registers : 16544
+Total pins : 275
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
