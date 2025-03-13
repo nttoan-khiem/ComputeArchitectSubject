@@ -291,9 +291,55 @@ r1
 !i113 1
 R12
 ninst@mem
+vlsu
+R1
+Z40 !s110 1741874273
+!i10b 1
+!s100 _W@`jGaJ>=eJ9ke>J=BJ=3
+IL7z3`P:F_WH:1LhGlncHc2
+R3
+!s105 lsu_sv_unit
+S1
+R0
+w1741874131
+8..\src\lsu.sv
+F..\src\lsu.sv
+L0 1
+R8
+r1
+!s85 0
+31
+Z41 !s108 1741874273.000000
+Z42 !s107 ..\src\lsu.sv|..\src\memory.sv|.\lsu_tb.sv|
+Z43 !s90 .\lsu_tb.sv|..\src\memory.sv|..\src\lsu.sv|
+!i113 1
+R12
+vlsu_tb
+R1
+R40
+!i10b 1
+!s100 [B[UWTO?^FYGYN:0dQ<Nf0
+IAeF>ZZR=Md=2M3Q?hM:?52
+R3
+Z44 !s105 lsu_tb_sv_unit
+S1
+R0
+w1741874036
+Z45 8.\lsu_tb.sv
+Z46 F.\lsu_tb.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R41
+R42
+R43
+!i113 1
+R12
 vmemory
 R1
-Z40 !s110 1741672659
+R40
 !i10b 1
 !s100 8T6^N]QEbRe1EL_52WF^Y0
 I`Hcba4JzFdQOBgTDJcdPR3
@@ -309,30 +355,30 @@ R8
 r1
 !s85 0
 31
-Z41 !s108 1741672659.000000
-Z42 !s107 ..\src\memory.sv|.\memory_tb.sv|
-Z43 !s90 .\memory_tb.sv|..\src\memory.sv|
+R41
+R42
+R43
 !i113 1
 R12
 vmemory_tb
 R1
-R40
+!s110 1741871709
 !i10b 1
-!s100 7YL>g4e_gH>kY7jBLnV^b3
-I`_G:j1QzUCn0^;S?IBcEY2
+!s100 Ok;BOMJ8inVn8=aDU8T_01
+IZ[UXLlVR[daPIfiKXM9Xb1
 R3
-!s105 memory_tb_sv_unit
+R44
 S1
 R0
-w1741672547
-8.\memory_tb.sv
-F.\memory_tb.sv
+w1741871706
+R45
+R46
 L0 1
 R8
 r1
 !s85 0
 31
-R41
+!s108 1741871709.000000
 R42
 R43
 !i113 1

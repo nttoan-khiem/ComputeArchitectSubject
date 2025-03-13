@@ -8,8 +8,8 @@ module lsu(
     input logic [31:0] i_ph_sw,
     input logic [31:0] i_ph_button,
     output logic [31:0] o_ldData,
-    output logic [9:0] o_ph_ledr,
-    output logic [9:0] o_ph_ledg,
+    output logic [31:0] o_ph_ledr,
+    output logic [31:0] o_ph_ledg,
     output logic [6:0] o_ph_seg0,
     output logic [6:0] o_ph_seg1,
     output logic [6:0] o_ph_seg2,
@@ -22,8 +22,8 @@ module lsu(
 );
 logic en_memory, en_ledr, en_ledg, en_seg30, en_seg74, en_lcd, en_sw, en_button;
 always @(*) begin
-    case (i_addr[31:24])
-        8'h00: begin 
+    case (i_addr[31:12]) //0-3, 4-7, 8-11, 12-15, 16-19, 20-23, 24-27, 28-31
+        20'h0000_0: begin 
             en_memory = ~i_addr[23];
             en_ledr = 0;
             en_ledg = 0;
@@ -33,7 +33,7 @@ always @(*) begin
             en_sw = 0;
             en_button = 0;
         end
-        8'h10: begin 
+        20'h1000_0: begin 
             en_ledr = 1;
             en_memory = 0;
             en_ledg = 0;
@@ -43,7 +43,7 @@ always @(*) begin
             en_sw = 0;
             en_button = 0;
         end
-        8'h11: begin
+        20'h1000_1: begin
             en_ledg = 1;
             en_ledr = 0;
             en_memory = 0;
@@ -53,7 +53,7 @@ always @(*) begin
             en_sw = 0;
             en_button = 0;
         end
-        8'h12: begin 
+        20'h1000_2: begin 
             en_seg30 = 1;
             en_ledr = 0;
             en_memory = 0;
@@ -63,7 +63,7 @@ always @(*) begin
             en_sw = 0;
             en_button = 0;
         end
-        8'h13: begin 
+        20'h1000_3: begin 
             en_seg74 = 1;
             en_ledr = 0;
             en_memory = 0;
@@ -73,7 +73,7 @@ always @(*) begin
             en_sw = 0;
             en_button = 0;
         end
-        8'h14: begin 
+        20'h1000_4: begin 
             en_lcd = 1;
             en_ledr = 0;
             en_memory = 0;
@@ -83,7 +83,7 @@ always @(*) begin
             en_sw = 0;
             en_button = 0;
         end
-        8'h90: begin 
+        20'h1001_0: begin 
             en_sw = 1;
             en_ledr = 0;
             en_memory = 0;
@@ -93,7 +93,7 @@ always @(*) begin
             en_lcd = 0;
             en_button = 0;
         end
-        8'h91: begin
+        20'h1001_1: begin
             en_button = 1;
             en_ledr = 0;
             en_memory = 0;
@@ -120,7 +120,7 @@ logic [31:0] mem;
 memory dataMemoryBlock(
     .i_clk(i_clk),
     .i_reset(i_reset),
-    .i_addr(i_addr[11:0]), //2kb
+    .i_addr(i_addr[10:0]), //2kb
     .i_wdata(i_stData),
     .i_mask(i_mask),
     .i_wren(i_wren & en_memory),
@@ -138,7 +138,7 @@ always @(posedge i_clk or negedge i_reset) begin
         if(i_wren & en_ledr & i_mask[3]) ledr[31:24] <= i_stData[31:24];
     end
 end
-assign o_ph_ledr = ledr[9:0];
+assign o_ph_ledr = ledr[31:0];
 //ledg control 
 logic [31:0] ledg;
 always @(posedge i_clk or negedge i_reset) begin
@@ -151,7 +151,7 @@ always @(posedge i_clk or negedge i_reset) begin
         if(i_wren & en_ledg & i_mask[3]) ledg[31:24] <= i_stData[31:24];
     end
 end
-assign o_ph_ledg = ledg[9:0];
+assign o_ph_ledg = ledg[31:0];
 //hex 3 to 0 control
 logic [31:0] seg30;
 always @(posedge i_clk or negedge i_reset) begin
