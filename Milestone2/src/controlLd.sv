@@ -6,8 +6,8 @@ module controlLd(
 );
 logic [31:0] loadByte;
 logic [31:0] loadHWord;
-assign loadByte = {{24{i_data[7] & i_unsign}}, i_data[7:0]};
-assign loadHWord = {{16{i_data[15] & i_unsign}}, i_data[15:0]};
+assign loadByte = {{24{i_data[7] & (~i_unsign)}}, i_data[7:0]};
+assign loadHWord = {{16{i_data[15] & (~i_unsign)}}, i_data[15:0]};
 
 always @(*) begin
     case (i_mask)
