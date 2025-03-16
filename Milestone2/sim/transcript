@@ -1,45 +1,25 @@
-# vsim work.genImm_tb -c -do "run -all; exit" 
-# Start time: 21:03:12 on Mar 13,2025
+# vsim work.controlLd_tb -c -do "run -all; exit" 
+# Start time: 21:25:03 on Mar 16,2025
 # Loading sv_std.std
-# Loading work.genImm_tb
-# Loading work.genImm
+# Loading work.controlLd_tb
+# Loading work.controlLd
 # run -all
-# Starting genImm Testbench...
-# Test I-TYPE
-# PASS: i_instruction=0x00a28213, i_operation=000, o_imm=0x0000000a
-# PASS: i_instruction=0xff028213, i_operation=000, o_imm=0xfffffff0
-# PASS: i_instruction=0x00425193, i_operation=001, o_imm=0x00000004
-# PASS: i_instruction=0x40525193, i_operation=001, o_imm=0x00000005
-# PASS: i_instruction=0x00f11093, i_operation=001, o_imm=0x0000000f
-# Test LOAD INSTRUCMENT-TYPE
-# PASS: i_instruction=0x00510083, i_operation=000, o_imm=0x00000005
-# PASS: i_instruction=0xf4c7a403, i_operation=000, o_imm=0xffffff4c
-# Test S-TYPE
-# PASS: i_instruction=0x06110223, i_operation=010, o_imm=0x00000064
-# PASS: i_instruction=0x801129a3, i_operation=010, o_imm=0xfffff813
-# Test B-TYPE
-# PASS: i_instruction=0x00209463, i_operation=011, o_imm=0x00000008
-# PASS: i_instruction=0x7a2090e3, i_operation=011, o_imm=0x00000fa0
-# PASS: i_instruction=0x86209063, i_operation=011, o_imm=0xfffff060
-# PASS: i_instruction=0x82208c63, i_operation=011, o_imm=0xfffff038
-# PASS: i_instruction=0xb220fc63, i_operation=011, o_imm=0xfffff338
-# Test JAL-TYPE
-# PASS: i_instruction=0x729dc2ef, i_operation=100, o_imm=0x000dcf28
-# PASS: i_instruction=0xdb9222ef, i_operation=100, o_imm=0xfff22db8
-# Test JALR-TYPE
-# PASS: i_instruction=0xf16082e7, i_operation=000, o_imm=0xffffff16
-# PASS: i_instruction=0x7ff082e7, i_operation=000, o_imm=0x000007ff
-# PASS: i_instruction=0x418082e7, i_operation=000, o_imm=0x00000418
-# Test U-TYPE
-# PASS: i_instruction=0x0000a0b7, i_operation=101, o_imm=0x0000a000
-# PASS: i_instruction=0xe6eb20b7, i_operation=101, o_imm=0xe6eb2000
-# PASS: i_instruction=0x1a8be0b7, i_operation=101, o_imm=0x1a8be000
-# PASS: i_instruction=0x0b67c297, i_operation=101, o_imm=0x0b67c000
-# PASS: i_instruction=0xf4ab0297, i_operation=101, o_imm=0xf4ab0000
-# ** Note: $stop    : ./genImm_tb.sv(164)
-#    Time: 47 ns  Iteration: 0  Instance: /genImm_tb
-# Break in Module genImm_tb at ./genImm_tb.sv line 164
-# Stopped at ./genImm_tb.sv line 164
-#  exit
-# End time: 21:03:13 on Mar 13,2025, Elapsed time: 0:00:01
+# Test 1 PASSED: i_data=000000f4, i_unsign=0, i_mask=0001, o_data=fffffff4
+# Test 2 PASSED: i_data=000000f4, i_unsign=1, i_mask=0001, o_data=000000f4
+# Test 3 PASSED: i_data=0000fff4, i_unsign=0, i_mask=0011, o_data=fffffff4
+# Test 4 PASSED: i_data=0000fff4, i_unsign=1, i_mask=0011, o_data=0000fff4
+# Test 5 PASSED: i_data=aabbccdd, i_unsign=0, i_mask=1111, o_data=aabbccdd
+# Test 6 PASSED: i_data=0000007f, i_unsign=0, i_mask=0001, o_data=0000007f
+# Test 7 PASSED: i_data=0000007f, i_unsign=1, i_mask=0001, o_data=0000007f
+# Test 8 PASSED: i_data=00007fff, i_unsign=0, i_mask=0011, o_data=00007fff
+# Test 9 PASSED: i_data=00007fff, i_unsign=1, i_mask=0011, o_data=00007fff
+# Test 10 PASSED: i_data=ffffffff, i_unsign=0, i_mask=0001, o_data=ffffffff
+# Test 11 PASSED: i_data=ffffffff, i_unsign=1, i_mask=0001, o_data=000000ff
+# Test 12 PASSED: i_data=ffffffff, i_unsign=0, i_mask=0011, o_data=ffffffff
+# Test 13 PASSED: i_data=ffffffff, i_unsign=1, i_mask=0011, o_data=0000ffff
+# Test 14 PASSED: i_data=12345678, i_unsign=0, i_mask=1111, o_data=12345678
+# Test 15 PASSED: i_data=87654321, i_unsign=1, i_mask=1111, o_data=87654321
+# ** Note: $finish    : ./controlLd_tb.sv(124)
+#    Time: 150 ns  Iteration: 0  Instance: /controlLd_tb
+# End time: 21:25:03 on Mar 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
