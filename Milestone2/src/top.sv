@@ -159,4 +159,7 @@ control masterControlBlock(
     .o_rdWrEnable(wReg_en_control),
     .o_mask({loadUnsign_control,mask_control})
 );
+//for debug
+assign o_pcDebug = pc_current;
+//assign o_insnVld = ?;
 endmodule
