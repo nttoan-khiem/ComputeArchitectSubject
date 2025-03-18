@@ -106,7 +106,7 @@ logic [31:0] lsu_data;
 logic [31:0] lsu_load_data;
 logic [31:0] switch_input, button_input;
 assign switch_input = {{22{1'd0}}, i_ph_sw};
-assign button_input = {{28{1'd0}}, i_ph_button}
+assign button_input = {{28{1'd0}}, i_ph_button};
 lsu lsuBlock(
     .i_clk(i_clk),
     .i_reset(i_reset),
