@@ -276,28 +276,28 @@ module lsu_tb;
         writeH(32'h1000_04a0, 16'h1234);
         checkValueH(32'h1000_0400, 32'h1234);
         writeW(32'h1000_04f0, 32'hefad_1234);
-        checkValueW(32'h1000_0fff, 32'hefad_1234);
+        checkValueW(32'h1000_0f00, 32'hefad_1234);
         //access check ledg
-        writeB(32'h1000_1401, 8'h11);
-        checkValueB(32'h1000_1001, 32'h11);
-        writeH(32'h1000_14a1, 16'h1234);
-        checkValueH(32'h1000_1401, 32'h1234);
-        writeW(32'h1000_14f1, 32'hefad_1234);
-        checkValueW(32'h1000_1ff1, 32'hefad_1234);
+        writeB(32'h1000_1400, 8'h11);
+        checkValueB(32'h1000_1000, 32'h11);
+        writeH(32'h1000_14a0, 16'h1234);
+        checkValueH(32'h1000_1400, 32'h1234);
+        writeW(32'h1000_14f0, 32'hefad_1234);
+        checkValueW(32'h1000_1ff0, 32'hefad_1234);
         //access check seg30
-        writeB(32'h1000_2402, 8'h11);
-        checkValueB(32'h1000_2002, 32'h11);
-        writeH(32'h1000_24a2, 16'h1234);
-        checkValueH(32'h1000_2402, 32'h1234);
-        writeW(32'h1000_24f2, 32'hefad_1234);
-        checkValueW(32'h1000_2ff2, 32'hefad_1234);
+        writeB(32'h1000_2400, 8'h11);
+        checkValueB(32'h1000_2000, 32'h11);
+        writeH(32'h1000_24a0, 16'h1234);
+        checkValueH(32'h1000_2400, 32'h1234);
+        writeW(32'h1000_24f0, 32'hefad_1234);
+        checkValueW(32'h1000_2ff0, 32'hefad_1234);
         //access check seg74
-        writeB(32'h1000_3412, 8'h11);
-        checkValueB(32'h1000_3012, 32'h11);
-        writeH(32'h1000_3412, 16'h1234);
-        checkValueH(32'h1000_3412, 32'h1234);
-        writeW(32'h1000_3412, 32'hefad_1234);
-        checkValueW(32'h1000_3f12, 32'hefad_1234);
+        writeB(32'h1000_3410, 8'h11);
+        checkValueB(32'h1000_3010, 32'h11);
+        writeH(32'h1000_3410, 16'h1234);
+        checkValueH(32'h1000_3410, 32'h1234);
+        writeW(32'h1000_3410, 32'hefad_1234);
+        checkValueW(32'h1000_3f10, 32'hefad_1234);
         //access check lcd
         writeB(32'h1000_4f02, 8'h11);
         checkValueB(32'h1000_4f02, 32'h11);

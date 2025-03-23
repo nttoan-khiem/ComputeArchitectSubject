@@ -126,64 +126,87 @@ memory dataMemoryBlock(
     .i_wren(i_wren & en_memory),
     .o_rdata(mem)
 );
+logic [31:0] addr0Temp, addr1Temp, addr2Temp, addr3Temp;
+assign addr0Temp = i_addr;
+assign addr1Temp = i_addr + 32'd1;
+assign addr2Temp = i_addr + 32'd2;
+assign addr3Temp = i_addr + 32'd3;
+logic [2:0] addr0, addr1, addr2, addr3; 
+assign addr0 = addr0Temp[2:0];
+assign addr1 = addr1Temp[2:0];
+assign addr2 = addr2Temp[2:0];
+assign addr3 = addr3Temp[2:0];
+
 //ledr control 
-logic [31:0] ledr;
+logic [7:0] ledrReg [7:0];
 always @(posedge i_clk or negedge i_reset) begin
     if(!i_reset) begin 
-        ledr <= 32'd0;
+        ledrReg[0] <= 8'd0;
+        ledrReg[1] <= 8'd0;
+        ledrReg[2] <= 8'd0;
+        ledrReg[3] <= 8'd0;
     end else begin
-        if(i_wren & en_ledr & i_mask[0]) ledr[7:0] <= i_stData[7:0];
-        if(i_wren & en_ledr & i_mask[1]) ledr[15:8] <= i_stData[15:8];
-        if(i_wren & en_ledr & i_mask[2]) ledr[23:16] <= i_stData[23:16];
-        if(i_wren & en_ledr & i_mask[3]) ledr[31:24] <= i_stData[31:24];
+        if(i_wren & en_ledr & i_mask[0]) ledrReg[addr0] <= i_stData[7:0];
+        if(i_wren & en_ledr & i_mask[1]) ledrReg[addr1] <= i_stData[15:8];
+        if(i_wren & en_ledr & i_mask[2]) ledrReg[addr2] <= i_stData[23:16];
+        if(i_wren & en_ledr & i_mask[3]) ledrReg[addr3] <= i_stData[31:24];
     end
 end
-assign o_ph_ledr = ledr[31:0];
+assign o_ph_ledr = {ledrReg[3], ledrReg[2], ledrReg[1], ledrReg[0]};
 //ledg control 
-logic [31:0] ledg;
+logic [7:0] ledg [7:0];
 always @(posedge i_clk or negedge i_reset) begin
     if(!i_reset) begin 
-        ledg <= 32'd0;
+        ledg[0] <= 8'd0;
+        ledg[1] <= 8'd0;
+        ledg[2] <= 8'd0;
+        ledg[3] <= 8'd0;
     end else begin
-        if(i_wren & en_ledg & i_mask[0]) ledg[7:0] <= i_stData[7:0];
-        if(i_wren & en_ledg & i_mask[1]) ledg[15:8] <= i_stData[15:8];
-        if(i_wren & en_ledg & i_mask[2]) ledg[23:16] <= i_stData[23:16];
-        if(i_wren & en_ledg & i_mask[3]) ledg[31:24] <= i_stData[31:24];
+        if(i_wren & en_ledg & i_mask[0]) ledg[addr0] <= i_stData[7:0];
+        if(i_wren & en_ledg & i_mask[1]) ledg[addr1] <= i_stData[15:8];
+        if(i_wren & en_ledg & i_mask[2]) ledg[addr2] <= i_stData[23:16];
+        if(i_wren & en_ledg & i_mask[3]) ledg[addr3] <= i_stData[31:24];
     end
 end
-assign o_ph_ledg = ledg[31:0];
+assign o_ph_ledg = {ledg[3], ledg[2], ledg[1], ledg[0]};
 //hex 3 to 0 control
-logic [31:0] seg30;
+logic [7:0] seg30 [7:0];
 always @(posedge i_clk or negedge i_reset) begin
     if(!i_reset) begin 
-        seg30 <= 32'd0;
+        seg30[0] <= 8'd0;
+        seg30[1] <= 8'd0;
+        seg30[2] <= 8'd0;
+        seg30[3] <= 8'd0;
     end else begin
-        if(i_wren & en_seg30 & i_mask[0]) seg30[7:0] <= i_stData[7:0];
-        if(i_wren & en_seg30 & i_mask[1]) seg30[15:8] <= i_stData[15:8];
-        if(i_wren & en_seg30 & i_mask[2]) seg30[23:16] <= i_stData[23:16];
-        if(i_wren & en_seg30 & i_mask[3]) seg30[31:24] <= i_stData[31:24];
+        if(i_wren & en_seg30 & i_mask[0]) seg30[addr0] <= i_stData[7:0];
+        if(i_wren & en_seg30 & i_mask[1]) seg30[addr1] <= i_stData[15:8];
+        if(i_wren & en_seg30 & i_mask[2]) seg30[addr2] <= i_stData[23:16];
+        if(i_wren & en_seg30 & i_mask[3]) seg30[addr3] <= i_stData[31:24];
     end
 end
-assign o_ph_seg0 = seg30[6:0];
-assign o_ph_seg1 = seg30[14:8];
-assign o_ph_seg2 = seg30[22:16];
-assign o_ph_seg3 = seg30[30:24];
+assign o_ph_seg0 = seg30[0][6:0];
+assign o_ph_seg1 = seg30[1][6:0];
+assign o_ph_seg2 = seg30[2][6:0];
+assign o_ph_seg3 = seg30[3][6:0];
 //hex 7 to 4 control
-logic [31:0] seg74;
+logic [7:0] seg74 [7:0];
 always @(posedge i_clk or negedge i_reset) begin
     if(!i_reset) begin 
-        seg74 <= 32'd0;
+        seg74[0] <= 8'd0;
+        seg74[1] <= 8'd0;
+        seg74[2] <= 8'd0;
+        seg74[3] <= 8'd0;
     end else begin
-        if(i_wren & en_seg74 & i_mask[0]) seg74[7:0] <= i_stData[7:0];
-        if(i_wren & en_seg74 & i_mask[1]) seg74[15:8] <= i_stData[15:8];
-        if(i_wren & en_seg74 & i_mask[2]) seg74[23:16] <= i_stData[23:16];
-        if(i_wren & en_seg74 & i_mask[3]) seg74[31:24] <= i_stData[31:24];
+        if(i_wren & en_seg74 & i_mask[0]) seg74[addr0] <= i_stData[7:0];
+        if(i_wren & en_seg74 & i_mask[1]) seg74[addr1] <= i_stData[15:8];
+        if(i_wren & en_seg74 & i_mask[2]) seg74[addr2] <= i_stData[23:16];
+        if(i_wren & en_seg74 & i_mask[3]) seg74[addr3] <= i_stData[31:24];
     end
 end
-assign o_ph_seg4 = seg74[6:0];
-assign o_ph_seg5 = seg74[14:8];
-assign o_ph_seg6 = seg74[22:16];
-assign o_ph_seg7 = seg74[30:24];
+assign o_ph_seg4 = seg74[0][6:0];
+assign o_ph_seg5 = seg74[1][6:0];
+assign o_ph_seg6 = seg74[2][6:0];
+assign o_ph_seg7 = seg74[3][6:0];
 //lcd control
 logic [31:0] lcd;
 always @(posedge i_clk or negedge i_reset) begin
@@ -200,10 +223,10 @@ assign o_ph_lcd = lcd;
 //control for read (load data) closely similar mux
 logic [31:0] r_mem, r_ledr, r_ledg, r_seg30, r_seg74, r_lcd, r_sw, r_button;
 assign r_mem = {32{en_memory}} & mem & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
-assign r_ledr = {32{en_ledr}} & ledr & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
-assign r_ledg = {32{en_ledg}} & ledg & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
-assign r_seg30 = {32{en_seg30}} & seg30 & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
-assign r_seg74 = {32{en_seg74}} & seg74 & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
+assign r_ledr = {32{en_ledr}} & {ledrReg[3], ledrReg[2], ledrReg[1], ledrReg[0]} & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
+assign r_ledg = {32{en_ledg}} & {ledg[3], ledg[2], ledg[1], ledg[0]} & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
+assign r_seg30 = {32{en_seg30}} & {seg30[3], seg30[2], seg30[1], seg30[0]} & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
+assign r_seg74 = {32{en_seg74}} & {seg74[3], seg74[2], seg74[1], seg74[0]} & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
 assign r_lcd = {32{en_lcd}} & lcd & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
 assign r_sw = {32{en_sw}} & i_ph_sw & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};
 assign r_button = {32{en_button}} & i_ph_button & {{8{i_mask[3]}}, {8{i_mask[2]}}, {8{i_mask[1]}}, {8{i_mask[0]}}};

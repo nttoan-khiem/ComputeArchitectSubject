@@ -1,25 +1,78 @@
-# vsim work.controlLd_tb -c -do "run -all; exit" 
-# Start time: 21:25:03 on Mar 16,2025
+# vsim work.lsu_tb -c -do "run -all; exit" 
+# Start time: 10:39:33 on Mar 23,2025
 # Loading sv_std.std
-# Loading work.controlLd_tb
-# Loading work.controlLd
+# Loading work.lsu_tb
+# Loading work.lsu
+# Loading work.memory
 # run -all
-# Test 1 PASSED: i_data=000000f4, i_unsign=0, i_mask=0001, o_data=fffffff4
-# Test 2 PASSED: i_data=000000f4, i_unsign=1, i_mask=0001, o_data=000000f4
-# Test 3 PASSED: i_data=0000fff4, i_unsign=0, i_mask=0011, o_data=fffffff4
-# Test 4 PASSED: i_data=0000fff4, i_unsign=1, i_mask=0011, o_data=0000fff4
-# Test 5 PASSED: i_data=aabbccdd, i_unsign=0, i_mask=1111, o_data=aabbccdd
-# Test 6 PASSED: i_data=0000007f, i_unsign=0, i_mask=0001, o_data=0000007f
-# Test 7 PASSED: i_data=0000007f, i_unsign=1, i_mask=0001, o_data=0000007f
-# Test 8 PASSED: i_data=00007fff, i_unsign=0, i_mask=0011, o_data=00007fff
-# Test 9 PASSED: i_data=00007fff, i_unsign=1, i_mask=0011, o_data=00007fff
-# Test 10 PASSED: i_data=ffffffff, i_unsign=0, i_mask=0001, o_data=ffffffff
-# Test 11 PASSED: i_data=ffffffff, i_unsign=1, i_mask=0001, o_data=000000ff
-# Test 12 PASSED: i_data=ffffffff, i_unsign=0, i_mask=0011, o_data=ffffffff
-# Test 13 PASSED: i_data=ffffffff, i_unsign=1, i_mask=0011, o_data=0000ffff
-# Test 14 PASSED: i_data=12345678, i_unsign=0, i_mask=1111, o_data=12345678
-# Test 15 PASSED: i_data=87654321, i_unsign=1, i_mask=1111, o_data=87654321
-# ** Note: $finish    : ./controlLd_tb.sv(124)
-#    Time: 150 ns  Iteration: 0  Instance: /controlLd_tb
-# End time: 21:25:03 on Mar 16,2025, Elapsed time: 0:00:00
+# [34m[OPERATION][0m Write WORD data = 12345678 to address = 00000000, at time:                   57
+# [32m[PASSED][0m Correct output data at address = 00000000, data: 12345678, at time:                   58
+# [34m[OPERATION][0m Write WORD data = ab345678 to address = 00000004, at time:                   75
+# [32m[PASSED][0m Correct output data at address = 00000004, data: ab345678, at time:                   76
+# [34m[OPERATION][0m Write WORD data = 123456ff to address = 000007fc, at time:                   93
+# [32m[PASSED][0m Correct output data at address = 000007fc, data: 123456ff, at time:                   94
+# [32m[PASSED][0m Correct output data at address = 0000010c, data: 00000000, at time:                   95
+# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 00000100, at time:                  111
+# [32m[PASSED][0m Correct output data at address = 00000100, data: 00001234, at time:                  112
+# [32m[PASSED][0m Correct output data at address = 00000102, data: 00000000, at time:                  113
+# [34m[OPERATION][0m Write HALF WORD data = ffff to address = 00000300, at time:                  129
+# [32m[PASSED][0m Correct output data at address = 00000300, data: 0000ffff, at time:                  130
+# [32m[PASSED][0m Correct output data at address = 00000302, data: 00000000, at time:                  131
+# [34m[OPERATION][0m Write BYTE data = 11 to address = 00000400, at time:                  150
+# [32m[PASSED][0m Correct output data at address = 00000400, data: 00000011, at time:                  151
+# [32m[PASSED][0m Correct output data at address = 00000401, data: 00000000, at time:                  152
+# [32m[PASSED][0m Correct output data at address = 00000402, data: 00000000, at time:                  153
+# [32m[PASSED][0m Correct output data at address = 00000403, data: 00000000, at time:                  154
+# [34m[OPERATION][0m Write BYTE data = 21 to address = 00000401, at time:                  173
+# [34m[OPERATION][0m Write BYTE data = 31 to address = 00000402, at time:                  192
+# [34m[OPERATION][0m Write BYTE data = 41 to address = 00000403, at time:                  211
+# [32m[PASSED][0m Correct output data at address = 00000400, data: 41312111, at time:                  212
+# [34m[OPERATION][0m Write BYTE data = 11 to address = 10000400, at time:                  231
+# [32m[PASSED][0m Correct output data at address = 10000000, data: 00000011, at time:                  232
+# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 100004a0, at time:                  248
+# [32m[PASSED][0m Correct output data at address = 10000400, data: 00001234, at time:                  249
+# [34m[OPERATION][0m Write WORD data = efad1234 to address = 100004f0, at time:                  266
+# [32m[PASSED][0m Correct output data at address = 10000f00, data: efad1234, at time:                  267
+# [34m[OPERATION][0m Write BYTE data = 11 to address = 10001400, at time:                  286
+# [32m[PASSED][0m Correct output data at address = 10001000, data: 00000011, at time:                  287
+# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 100014a0, at time:                  303
+# [32m[PASSED][0m Correct output data at address = 10001400, data: 00001234, at time:                  304
+# [34m[OPERATION][0m Write WORD data = efad1234 to address = 100014f0, at time:                  321
+# [32m[PASSED][0m Correct output data at address = 10001ff0, data: efad1234, at time:                  322
+# [34m[OPERATION][0m Write BYTE data = 11 to address = 10002400, at time:                  341
+# [32m[PASSED][0m Correct output data at address = 10002000, data: 00000011, at time:                  342
+# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 100024a0, at time:                  358
+# [32m[PASSED][0m Correct output data at address = 10002400, data: 00001234, at time:                  359
+# [34m[OPERATION][0m Write WORD data = efad1234 to address = 100024f0, at time:                  376
+# [32m[PASSED][0m Correct output data at address = 10002ff0, data: efad1234, at time:                  377
+# [34m[OPERATION][0m Write BYTE data = 11 to address = 10003410, at time:                  396
+# [32m[PASSED][0m Correct output data at address = 10003010, data: 00000011, at time:                  397
+# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 10003410, at time:                  413
+# [32m[PASSED][0m Correct output data at address = 10003410, data: 00001234, at time:                  414
+# [34m[OPERATION][0m Write WORD data = efad1234 to address = 10003410, at time:                  431
+# [32m[PASSED][0m Correct output data at address = 10003f10, data: efad1234, at time:                  432
+# [34m[OPERATION][0m Write BYTE data = 11 to address = 10004f02, at time:                  451
+# [32m[PASSED][0m Correct output data at address = 10004f02, data: 00000011, at time:                  452
+# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 10004fa2, at time:                  468
+# [32m[PASSED][0m Correct output data at address = 10004f02, data: 00001234, at time:                  469
+# [34m[OPERATION][0m Write WORD data = efad1234 to address = 10004ff2, at time:                  486
+# [32m[PASSED][0m Correct output data at address = 10004ff2, data: efad1234, at time:                  487
+# [32m[PASSED][0m Correct output data at address = 10010000, data: 00000078, at time:                  611
+# [32m[PASSED][0m Correct output data at address = 10010001, data: 00005678, at time:                  612
+# [32m[PASSED][0m Correct output data at address = 10010030, data: 12345678, at time:                  613
+# [32m[PASSED][0m Correct output data at address = 10010010, data: 00000001, at time:                  705
+# [32m[PASSED][0m Correct output data at address = 10010021, data: 0000ef01, at time:                  706
+# [32m[PASSED][0m Correct output data at address = 1001003f, data: abcdef01, at time:                  707
+# [32m[PASSED][0m Correct output data at address = 10011030, data: 00000065, at time:                  831
+# [32m[PASSED][0m Correct output data at address = 100110f1, data: 00008765, at time:                  832
+# [32m[PASSED][0m Correct output data at address = 10011032, data: 43218765, at time:                  833
+# [32m[PASSED][0m Correct output data at address = 10011f10, data: 00000025, at time:                  925
+# [32m[PASSED][0m Correct output data at address = 100110ff, data: 00002025, at time:                  926
+# [32m[PASSED][0m Correct output data at address = 10011fff, data: 10232025, at time:                  927
+# ** Note: $stop    : ./lsu_tb.sv(331)
+#    Time: 1027 ps  Iteration: 0  Instance: /lsu_tb
+# Break in Module lsu_tb at ./lsu_tb.sv line 331
+# Stopped at ./lsu_tb.sv line 331
+#  exit
+# End time: 10:39:34 on Mar 23,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
