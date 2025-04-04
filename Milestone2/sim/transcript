@@ -1,5 +1,5 @@
 # vsim work.lsu_tb -c -do "run -all; exit" 
-# Start time: 10:39:33 on Mar 23,2025
+# Start time: 19:54:18 on Apr 04,2025
 # Loading sv_std.std
 # Loading work.lsu_tb
 # Loading work.lsu
@@ -74,5 +74,5 @@
 # Break in Module lsu_tb at ./lsu_tb.sv line 331
 # Stopped at ./lsu_tb.sv line 331
 #  exit
-# End time: 10:39:34 on Mar 23,2025, Elapsed time: 0:00:01
+# End time: 19:54:19 on Apr 04,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

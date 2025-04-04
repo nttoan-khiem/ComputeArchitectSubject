@@ -11,7 +11,8 @@ module control(
     output logic o_memWrEnable,
     output logic [1:0] o_wbSel,
     output logic o_rdWrEnable,
-    output logic [4:0] o_mask
+    output logic [4:0] o_mask,
+    output logic o_insn_vld
 );
 logic [6:0] opcode;
 assign opcode = i_inst[6:0];
@@ -45,7 +46,7 @@ always @(*) begin
         3'b101: pcSel_Bformat = ~(i_brlLess);
         3'b110: pcSel_Bformat = i_brlLess;
         3'b111: pcSel_Bformat = ~(i_brlLess);
-        default: pcSel_Bformat = 1'd0;
+        default: pcSel_Bformat = 1'b0; //undefind with opcode B-format
     endcase
 end
 always @(*) begin
@@ -69,7 +70,7 @@ always @(*) begin
     case (func3)
         3'b001: opImm_Iformat = 3'b001;
         3'b101: opImm_Iformat = 3'b001;
-        default: opImm_Iformat = 3'b000;
+        default: opImm_Iformat = 3'b000;      //dont care because 
     endcase
 end
 always @(*) begin
@@ -93,7 +94,7 @@ always @(*) begin
     case (func3)
         3'b110: brUnsign_BFormat = 1'b1;
         3'b111: brUnsign_BFormat = 1'b1;
-        default: brUnsign_BFormat = 1'b0;
+        default: brUnsign_BFormat = 1'b0; //dont care because I type full func3
     endcase
 end
 always @(*) begin
@@ -257,6 +258,107 @@ always @(*) begin
         4'd7: mask = 5'b00000; //I-format
         4'd8: mask = 5'b00000; //R-format
         default: mask = 5'b00000;
+    endcase
+end
+//insn validation gen
+//check jalr func3
+logic jalrFunc3Vld;
+always @(*) begin
+    case (func3)
+        3'b000: jalrFunc3Vld = 1'b1; 
+        default: jalrFunc3Vld = 1'b0;
+    endcase
+end
+logic bTypeFuncVld;
+always @(*) begin
+    case (func3)
+        3'b000: bTypeFuncVld = 1'b1;
+        3'b001: bTypeFuncVld = 1'b1;
+        3'b100: bTypeFuncVld = 1'b1;
+        3'b101: bTypeFuncVld = 1'b1;
+        3'b110: bTypeFuncVld = 1'b1;
+        3'b111: bTypeFuncVld = 1'b1;
+        default: bTypeFuncVld = 1'b0; //undefind with opcode B-format
+    endcase
+end
+logic iTypefuncVld;
+always @(*) begin
+    case (func3)
+        3'b001: begin 
+            if(i_inst[31:25] === 7'd0) begin
+                iTypefuncVld = 1'b1;
+            end else begin 
+                iTypefuncVld = 1'b0;
+            end
+        end 
+        3'b101: begin 
+            if(i_inst[31] | i_inst[29] | i_inst[28] | i_inst[27] | i_inst[26] | i_inst[25]) begin 
+                iTypefuncVld = 1'b0;
+            end else begin 
+                iTypefuncVld = 1'b1;
+            end
+        end
+        default: iTypefuncVld = 1'b1;
+    endcase
+end
+logic rTypeFuncVald;
+always @(*) begin
+    case (func3)
+        3'b000: begin 
+            if(i_inst[31] | i_inst[29] | i_inst[28] | i_inst[27] | i_inst[26] | i_inst[25]) begin 
+                rTypeFuncVald = 1'b0;
+            end else begin 
+                rTypeFuncVald = 1'b1;
+            end
+        end
+        3'b101: begin 
+            if(i_inst[31] | i_inst[29] | i_inst[28] | i_inst[27] | i_inst[26] | i_inst[25]) begin 
+                rTypeFuncVald = 1'b0;
+            end else begin 
+                rTypeFuncVald = 1'b1;
+            end
+        end 
+        default: begin 
+            if(i_inst[31:25] === 7'd0) begin
+                rTypeFuncVald = 1'b1;
+            end else begin 
+                rTypeFuncVald = 1'b0;
+            end
+        end
+    endcase
+end
+logic lTypeFuncVld;
+always @(*) begin
+    case (func3)
+        3'b000: lTypeFuncVld = 1'b1;
+        3'b001: lTypeFuncVld = 1'b1;
+        3'b010: lTypeFuncVld = 1'b1;
+        3'b100: lTypeFuncVld = 1'b1; 
+        3'b101: lTypeFuncVld = 1'b1;
+        default: lTypeFuncVld = 1'b0;
+    endcase
+end
+logic sTypeFuncVld;
+always @(*) begin
+    case (func3)
+        3'b000: sTypeFuncVld = 1'b1; 
+        3'b001: sTypeFuncVld = 1'b1; 
+        3'b010: sTypeFuncVld = 1'b1; 
+        default: sTypeFuncVld = 1'b0;
+    endcase
+end
+always @(*) begin
+    case (formatCode)
+        4'd0: o_insn_vld = 1'b1; //LUI
+        4'd1: o_insn_vld = 1'b1; //AUIPC
+        4'd2: o_insn_vld = 1'b1; //JAL
+        4'd3: o_insn_vld = jalrFunc3Vld; //JALR
+        4'd4: o_insn_vld = bTypeFuncVld; //B-format
+        4'd5: o_insn_vld = lTypeFuncVld; //L-format
+        4'd6: o_insn_vld = sTypeFuncVld; //S-format
+        4'd7: o_insn_vld = iTypefuncVld; //I-format
+        4'd8: o_insn_vld = rTypeFuncVald; //R-format
+        default: o_insn_vld = 1'b0; //undefine opcode
     endcase
 end
 //Assign signal

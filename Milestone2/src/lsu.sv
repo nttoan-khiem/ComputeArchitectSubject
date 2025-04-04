@@ -22,9 +22,9 @@ module lsu(
 );
 logic en_memory, en_ledr, en_ledg, en_seg30, en_seg74, en_lcd, en_sw, en_button;
 always @(*) begin
-    case (i_addr[31:12]) //0-3, 4-7, 8-11, 12-15, 16-19, 20-23, 24-27, 28-31
+    case (i_addr[31:12]) //31-28, 27-24, 23-20, 19-16, 15-12, 11-8, 7-4, 3-0
         20'h0000_0: begin 
-            en_memory = ~i_addr[23];
+            en_memory = ~i_addr[11];
             en_ledr = 0;
             en_ledg = 0;
             en_seg30 = 0;

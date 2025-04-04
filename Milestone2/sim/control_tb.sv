@@ -16,7 +16,7 @@ module control_tb;
     logic [1:0] o_wbSel;
     logic o_rdWrEnable;
     logic [4:0] o_mask;
-
+    logic o_insn_vld;
     // Instance module control
     control uut (
         .i_inst(i_inst),
@@ -31,7 +31,8 @@ module control_tb;
         .o_memWrEnable(o_memWrEnable),
         .o_wbSel(o_wbSel),
         .o_rdWrEnable(o_rdWrEnable),
-        .o_mask(o_mask)
+        .o_mask(o_mask),
+        .o_insn_vld(o_insn_vld)
     );
 
     // Task để hiển thị kết quả
@@ -69,6 +70,11 @@ module control_tb;
                 if(o_wbSel != expected_wbSel) $display("Fail: i_inst=0x%h, wrong WB_SEL = %h but expect: %h", i_inst, o_wbSel, expected_wbSel);
                 if(o_rdWrEnable != expected_rdWrEnable) $display("Fail: i_inst=0x%h, wrong WR_RD = %h but expect: %h", i_inst, o_rdWrEnable, expected_rdWrEnable);
                 if(o_mask != expected_mask) $display("Fail: i_inst=0x%h, wrong MEM_MASK = %h but expect: %h", i_inst, o_mask, expected_mask);
+            end
+            if(o_insn_vld == 1'b1) begin 
+                $display("--inst_valid--");   
+            end else begin 
+                $display("--inst_[Invalid]-- inst = %b", i_inst);
             end
             $display("------------------------------------------------");    
         end

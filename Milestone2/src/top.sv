@@ -1,21 +1,21 @@
 module top(
     input logic i_clk,
     input logic i_reset,
-    input logic [9:0] i_ph_sw,
+    input logic [32:0] i_io_sw,
     input logic [3:0] i_ph_button,
-    output logic [31:0] o_pcDebug,
-    output logic o_insnVld,
-    output logic [31:0] o_ph_ledr,
-    output logic [31:0] o_ph_ledg,
-    output logic [6:0] o_ph_seg0,
-    output logic [6:0] o_ph_seg1,
-    output logic [6:0] o_ph_seg2,
-    output logic [6:0] o_ph_seg3,
-    output logic [6:0] o_ph_seg4,
-    output logic [6:0] o_ph_seg5,
-    output logic [6:0] o_ph_seg6,
-    output logic [6:0] o_ph_seg7,
-    output logic [31:0] o_ph_lcd
+    output logic [31:0] o_pc_debug,
+    output logic o_insn_vld,
+    output logic [31:0] o_io_ledr,
+    output logic [31:0] o_io_ledg,
+    output logic [6:0] o_io_hex0,
+    output logic [6:0] o_io_hex1,
+    output logic [6:0] o_io_hex2,
+    output logic [6:0] o_io_hex3,
+    output logic [6:0] o_io_hex4,
+    output logic [6:0] o_io_hex5,
+    output logic [6:0] o_io_hex6,
+    output logic [6:0] o_io_hex7,
+    output logic [31:0] o_io_lcd
 );
 //still not complete
 //fect state
@@ -105,7 +105,7 @@ logic [3:0] mask_control;
 logic [31:0] lsu_data;
 logic [31:0] lsu_load_data;
 logic [31:0] switch_input, button_input;
-assign switch_input = {{22{1'd0}}, i_ph_sw};
+assign switch_input = i_io_sw;
 assign button_input = {{28{1'd0}}, i_ph_button};
 lsu lsuBlock(
     .i_clk(i_clk),
@@ -117,17 +117,17 @@ lsu lsuBlock(
     .i_ph_sw(switch_input),
     .i_ph_button(button_input),
     .o_ldData(lsu_data),
-    .o_ph_ledr(o_ph_ledr),
-    .o_ph_ledg(o_ph_ledg),
-    .o_ph_seg0(o_ph_seg0),
-    .o_ph_seg1(o_ph_seg1),
-    .o_ph_seg2(o_ph_seg2),
-    .o_ph_seg3(o_ph_seg3),
-    .o_ph_seg4(o_ph_seg4),
-    .o_ph_seg5(o_ph_seg5),
-    .o_ph_seg6(o_ph_seg6),
-    .o_ph_seg7(o_ph_seg7),
-    .o_ph_lcd(o_ph_lcd)
+    .o_ph_ledr(o_io_ledr),
+    .o_ph_ledg(o_io_ledg),
+    .o_ph_seg0(o_io_hex0),
+    .o_ph_seg1(o_io_hex1),
+    .o_ph_seg2(o_io_hex2),
+    .o_ph_seg3(o_io_hex3),
+    .o_ph_seg4(o_io_hex4),
+    .o_ph_seg5(o_io_hex5),
+    .o_ph_seg6(o_io_hex6),
+    .o_ph_seg7(o_io_hex7),
+    .o_ph_lcd(o_io_lcd)
 );
 controlLd controlLoadLsuBlock(
     .i_data(lsu_data),
@@ -160,6 +160,6 @@ control masterControlBlock(
     .o_mask({loadUnsign_control,mask_control})
 );
 //for debug
-assign o_pcDebug = pc_current;
-//assign o_insnVld = ?;
+assign o_pc_debug = pc_current;
+//assign o_insn_vld = ?;
 endmodule

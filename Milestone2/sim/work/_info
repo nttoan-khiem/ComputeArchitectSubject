@@ -128,15 +128,15 @@ R12
 nbranch@less@control
 vcontrol
 R1
-Z24 !s110 1740750780
+Z24 !s110 1743748524
 !i10b 1
-!s100 I0Re@KA1C;=^Z;;l9ECi`1
-I6Unh@Xj=We0TPenMOSWlS3
+!s100 j79Q2654R^kX0;::[fK9n2
+I^?l<onOO@=eb=7`A1G6nT0
 R3
 !s105 control_sv_unit
 S1
 R0
-w1740749589
+w1743748518
 8..\src\control.sv
 F..\src\control.sv
 L0 1
@@ -144,7 +144,7 @@ R8
 r1
 !s85 0
 31
-Z25 !s108 1740750780.000000
+Z25 !s108 1743748524.000000
 Z26 !s107 ..\src\control.sv|.\control_tb.sv|
 Z27 !s90 .\control_tb.sv|..\src\control.sv|
 !i113 1
@@ -153,13 +153,13 @@ vcontrol_tb
 R1
 R24
 !i10b 1
-!s100 @ONT[iB@1AmZ1kd2OFRPV2
-IDBbB=z9WR50X2PFXdI:VL3
+!s100 PWR9mIbgI=W?fJgA]?HaE0
+IjKl>86G[bC?_Qm^DH@EHj0
 R3
 !s105 control_tb_sv_unit
 S1
 R0
-w1740750100
+w1743747736
 8.\control_tb.sv
 F.\control_tb.sv
 L0 3
@@ -341,15 +341,15 @@ R12
 ninst@mem
 vlsu
 R1
-Z44 !s110 1742701157
+Z44 !s110 1743771224
 !i10b 1
-!s100 z]9LeC>o=XORZDl9fM[dI1
-IflP`VZL@037X^R29US;UK1
+!s100 90O<@1jU9kLR2`:^Z3NKB3
+IkbenhziBa5HkfLYQ=XGiQ0
 R3
 !s105 lsu_sv_unit
 S1
 R0
-w1742700398
+w1743771179
 8..\src\lsu.sv
 F..\src\lsu.sv
 L0 1
@@ -357,9 +357,9 @@ R8
 r1
 !s85 0
 31
-Z45 !s108 1742701157.000000
-Z46 !s107 ..\src\lsu.sv|.\lsu_tb.sv|
-Z47 !s90 .\lsu_tb.sv|..\src\lsu.sv|
+Z45 !s108 1743771224.000000
+Z46 !s107 ..\src\memory.sv|..\src\lsu.sv|.\lsu_tb.sv|
+Z47 !s90 .\lsu_tb.sv|..\src\lsu.sv|..\src\memory.sv|
 !i113 1
 R12
 vlsu_tb
@@ -387,7 +387,7 @@ R47
 R12
 vmemory
 R1
-!s110 1741874273
+R44
 !i10b 1
 !s100 8T6^N]QEbRe1EL_52WF^Y0
 I`Hcba4JzFdQOBgTDJcdPR3
@@ -403,9 +403,9 @@ R8
 r1
 !s85 0
 31
-!s108 1741874273.000000
-Z51 !s107 ..\src\lsu.sv|..\src\memory.sv|.\lsu_tb.sv|
-Z52 !s90 .\lsu_tb.sv|..\src\memory.sv|..\src\lsu.sv|
+R45
+R46
+R47
 !i113 1
 R12
 vmemory_tb
@@ -427,8 +427,8 @@ r1
 !s85 0
 31
 !s108 1741871709.000000
-R51
-R52
+!s107 ..\src\lsu.sv|..\src\memory.sv|.\lsu_tb.sv|
+!s90 .\lsu_tb.sv|..\src\memory.sv|..\src\lsu.sv|
 !i113 1
 R12
 vmux32

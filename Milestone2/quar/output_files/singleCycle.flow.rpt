@@ -1,5 +1,5 @@
 Flow report for singleCycle
-Tue Mar 11 15:01:15 2025
+Tue Apr 01 19:06:53 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Mar 11 14:57:58 2025       ;
+; Flow Status                     ; Successful - Tue Apr 01 19:06:31 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; singleCycle                                 ;
-; Top-level Entity Name           ; lsu                                         ;
+; Top-level Entity Name           ; top                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 29,726 / 41,910 ( 71 % )                    ;
-; Total registers                 ; 16544                                       ;
-; Total pins                      ; 275 / 499 ( 55 % )                          ;
+; Logic utilization (in ALMs)     ; 16 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 43                                          ;
+; Total pins                      ; 201 / 499 ( 40 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/11/2025 14:31:24 ;
+; Start date & time ; 04/01/2025 19:02:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; singleCycle         ;
 +-------------------+---------------------+
@@ -78,16 +78,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 27332939166419.174167828312352         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 27332939166419.174350897011540         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; lsu         ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; lsu         ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; lsu         ; Top        ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; top         ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; top         ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; top         ; Top        ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; lsu                                    ; singleCycle   ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; top                                    ; singleCycle   ; --          ; --         ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
@@ -96,11 +96,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:03:16     ; 1.2                     ; 5122 MB             ; 00:03:50                           ;
-; Fitter               ; 00:21:45     ; 1.1                     ; 6751 MB             ; 00:37:19                           ;
-; Assembler            ; 00:00:59     ; 1.0                     ; 5174 MB             ; 00:00:55                           ;
-; Timing Analyzer      ; 00:03:14     ; 1.8                     ; 5642 MB             ; 00:05:28                           ;
-; Total                ; 00:29:14     ; --                      ; --                  ; 00:47:32                           ;
+; Analysis & Synthesis ; 00:00:42     ; 1.0                     ; 4932 MB             ; 00:00:58                           ;
+; Fitter               ; 00:02:16     ; 1.0                     ; 6289 MB             ; 00:02:30                           ;
+; Assembler            ; 00:00:24     ; 1.0                     ; 4827 MB             ; 00:00:12                           ;
+; Timing Analyzer      ; 00:00:20     ; 1.0                     ; 5112 MB             ; 00:00:14                           ;
+; Total                ; 00:03:42     ; --                      ; --                  ; 00:03:54                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

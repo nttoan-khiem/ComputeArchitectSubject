@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSXFC6D6F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY lsu
+set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:31:47  FEBRUARY 14, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -48,6 +48,14 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SYSTEMVERILOG_FILE ../src/top.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../src/plus4.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../src/pcRegister.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../src/mux4to1.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../src/mux2to1.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../src/instMem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../src/controlLd.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../src/branchControl.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../src/lsu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../src/bram.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../src/memory.sv
