@@ -1,4 +1,4 @@
-module singleCycle(
+module singlecycle(
     input logic i_clk,
     input logic i_reset,
     input logic [31:0] i_io_sw,
