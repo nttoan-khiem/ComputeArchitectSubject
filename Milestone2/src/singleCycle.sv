@@ -1,7 +1,7 @@
-module top(
+module singleCycle(
     input logic i_clk,
     input logic i_reset,
-    input logic [32:0] i_io_sw,
+    input logic [31:0] i_io_sw,
     input logic [3:0] i_ph_button,
     output logic [31:0] o_pc_debug,
     output logic o_insn_vld,
@@ -144,6 +144,7 @@ mux4to1 controlWriteBackBlock(
     .o_data(writeBackData)
 );
 //Control block
+logic validInst;
 control masterControlBlock(
     .i_inst(inst_current),
     .i_brlLess(brLess_control),
@@ -157,9 +158,21 @@ control masterControlBlock(
     .o_memWrEnable(wrLsu_en_control),
     .o_wbSel(wb_sel_control),
     .o_rdWrEnable(wReg_en_control),
-    .o_mask({loadUnsign_control,mask_control})
+    .o_mask({loadUnsign_control,mask_control}),
+    .o_insn_vld(validInst)
 );
 //for debug
-assign o_pc_debug = pc_current;
+pcDebugff pcDebugBlock(
+    .i_clk(i_clk),
+    .i_reset(i_reset),
+    .i_data(pc_current),
+    .o_data(o_pc_debug)
+);
+validff validffBlock(
+    .i_clk(i_clk),
+    .i_reset(i_reset),
+    .i_data(validInst),
+    .o_data(o_insn_vld)
+);
 //assign o_insn_vld = ?;
 endmodule
