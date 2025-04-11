@@ -7,7 +7,7 @@ module memory(
     input logic i_wren,
     output logic [31:0] o_rdata
 );
-logic [7:0] mem [2047: 0]; //intermal memory block
+logic [7:0] mem [0: 2047]; //intermal memory block
 
 initial begin 
     $readmemh("../dump/inst.hex", mem);
