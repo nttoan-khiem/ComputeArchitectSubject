@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module controlLd(
     input logic [31:0] i_data,
     input logic i_unsign,

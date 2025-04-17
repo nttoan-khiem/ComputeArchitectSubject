@@ -1,10 +1,11 @@
+`timescale 1ns/1ps
 module singlecycle(
     input logic i_clk,
     input logic i_reset,
     input logic [31:0] i_io_sw,
-    input logic [3:0] i_ph_button,
+    //input logic [3:0] i_ph_button,
     output logic [31:0] o_pc_debug,
-    output logic o_insn_vld,
+    //output logic o_insn_vld,
     output logic [31:0] o_io_ledr,
     output logic [31:0] o_io_ledg,
     output logic [6:0] o_io_hex0,
@@ -16,6 +17,7 @@ module singlecycle(
     output logic [6:0] o_io_hex6,
     output logic [6:0] o_io_hex7,
     output logic [31:0] o_io_lcd
+    //output logic o_insn_vld
 );
 //still not complete
 //fect state
@@ -42,7 +44,7 @@ pcRegister pcRegisterBlock(
     .o_data(pc_current)
 );
 instMem instMemoryBlock(
-    .i_addr(pc_current),
+    .i_addr(pc_current[15:0]),
     .o_data(inst_current)
 );
 //load register
@@ -106,7 +108,7 @@ logic [31:0] lsu_data;
 logic [31:0] lsu_load_data;
 logic [31:0] switch_input, button_input;
 assign switch_input = i_io_sw;
-assign button_input = {{28{1'd0}}, i_ph_button};
+assign button_input = {{32{1'd0}}};
 lsu lsuBlock(
     .i_clk(i_clk),
     .i_reset(i_reset),
@@ -162,6 +164,7 @@ control masterControlBlock(
     .o_insn_vld(validInst)
 );
 //for debug
+logic o_insn_vld;
 pcDebugff pcDebugBlock(
     .i_clk(i_clk),
     .i_reset(i_reset),

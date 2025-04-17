@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module memory(
     input logic i_clk,
     input logic i_reset,
@@ -7,17 +8,17 @@ module memory(
     input logic i_wren,
     output logic [31:0] o_rdata
 );
-logic [7:0] mem [32767: 0]; //intermal memory block
+logic [7:0] mem [0 : 65535]; //intermal memory block
 
 initial begin 
-    $readmemh("../dump/inst.hex", mem);
+    $readmemh("../dump/test8.hex", mem);
 end
-logic [10:0] addr_0, addr_1, addr_2, addr_3;
+logic [15:0] addr_0, addr_1, addr_2, addr_3;
 logic byteWEn0, byteWEn1, byteWEn2, byteWEn3;
 assign addr_0 = i_addr;          // addr0 first byte
-assign addr_1 = i_addr + 11'd1;  // addr1 second byte
-assign addr_2 = i_addr + 11'd2;  // addr2 third byte
-assign addr_3 = i_addr + 11'd3;  // addr3 four th byte
+assign addr_1 = i_addr + 16'd1;  // addr1 second byte
+assign addr_2 = i_addr + 16'd2;  // addr2 third byte
+assign addr_3 = i_addr + 16'd3;  // addr3 four th byte
 assign byteWEn0 = i_mask[0] & i_wren; //wr mask enb 0
 assign byteWEn1 = i_mask[1] & i_wren; //wr mask enb 1
 assign byteWEn2 = i_mask[2] & i_wren; //wr mask enb 2

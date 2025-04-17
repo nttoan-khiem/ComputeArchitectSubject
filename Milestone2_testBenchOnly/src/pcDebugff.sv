@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module pcDebugff(
     input logic i_clk,
     input logic i_reset,

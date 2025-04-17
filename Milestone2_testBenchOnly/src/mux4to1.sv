@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module mux4to1(
     input logic [1:0] i_sel,
     input logic [31:0] i_dataA,

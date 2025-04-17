@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module control(
     input logic [31:0] i_inst,
     input logic i_brlLess,
@@ -30,7 +31,7 @@ always @(*) begin
         7'b1100011: formatCode = 4'd4; //B-format(BEQ)
         7'b0000011: formatCode = 4'd5; //L-format(LB)
         7'b0100011: formatCode = 4'd6; //S-format(SB)
-        7'b0010011: formatCode = 5'd7; //I-format(ADDI)
+        7'b0010011: formatCode = 4'd7; //I-format(ADDI)
         7'b0110011: formatCode = 4'd8; //R-format(ADD)    
         default: formatCode = 4'b1111; //Undefine Type
     endcase
@@ -148,13 +149,7 @@ logic [3:0] aluOp;
 logic [3:0] aluOp_IRFormat;
 always @(*) begin
     case (func3)
-        3'b000: begin 
-            if(!specialBit) begin 
-                aluOp_IRFormat = 4'b0000; //0 ADD
-            end else begin 
-                aluOp_IRFormat = 4'b0001; //1 SUB
-            end
-        end
+        3'b000: aluOp_IRFormat = 4'b0000; //0 ADD
         3'b001: aluOp_IRFormat = 4'b0111; //7 SLL
         3'b010: aluOp_IRFormat = 4'b0010; //2 SLT
         3'b011: aluOp_IRFormat = 4'b0011; //3 SLTU

@@ -1,78 +1,63 @@
-# vsim work.lsu_tb -c -do "run -all; exit" 
-# Start time: 19:48:36 on Apr 04,2025
+# vsim work.singlecycle 
+# Start time: 05:32:28 on Apr 18,2025
 # Loading sv_std.std
-# Loading work.lsu_tb
+# Loading work.singlecycle
+# Loading work.mux2to1
+# Loading work.plus4
+# Loading work.pcRegister
+# Loading work.instMem
+# Loading work.registerSet
+# Loading work.register32bit
+# Loading work.decoder32bit
+# Loading work.mux32
+# Loading work.genImm
+# Loading work.branchControl
+# Loading work.xorLogic
+# Loading work.branchLessControl
+# Loading work.alu
+# Loading work.controlSel
+# Loading work.selOperand
+# Loading work.shiftLeft
+# Loading work.shiftRight
+# Loading work.selOutputAlu
 # Loading work.lsu
 # Loading work.memory
-# run -all
-# [34m[OPERATION][0m Write WORD data = 12345678 to address = 00000000, at time:                   57
-# [32m[PASSED][0m Correct output data at address = 00000000, data: 12345678, at time:                   58
-# [34m[OPERATION][0m Write WORD data = ab345678 to address = 00000004, at time:                   75
-# [32m[PASSED][0m Correct output data at address = 00000004, data: ab345678, at time:                   76
-# [34m[OPERATION][0m Write WORD data = 123456ff to address = 000007fc, at time:                   93
-# [32m[PASSED][0m Correct output data at address = 000007fc, data: 123456ff, at time:                   94
-# [32m[PASSED][0m Correct output data at address = 0000010c, data: 00000000, at time:                   95
-# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 00000100, at time:                  111
-# [32m[PASSED][0m Correct output data at address = 00000100, data: 00001234, at time:                  112
-# [32m[PASSED][0m Correct output data at address = 00000102, data: 00000000, at time:                  113
-# [34m[OPERATION][0m Write HALF WORD data = ffff to address = 00000300, at time:                  129
-# [32m[PASSED][0m Correct output data at address = 00000300, data: 0000ffff, at time:                  130
-# [32m[PASSED][0m Correct output data at address = 00000302, data: 00000000, at time:                  131
-# [34m[OPERATION][0m Write BYTE data = 11 to address = 00000400, at time:                  150
-# [32m[PASSED][0m Correct output data at address = 00000400, data: 00000011, at time:                  151
-# [32m[PASSED][0m Correct output data at address = 00000401, data: 00000000, at time:                  152
-# [32m[PASSED][0m Correct output data at address = 00000402, data: 00000000, at time:                  153
-# [32m[PASSED][0m Correct output data at address = 00000403, data: 00000000, at time:                  154
-# [34m[OPERATION][0m Write BYTE data = 21 to address = 00000401, at time:                  173
-# [34m[OPERATION][0m Write BYTE data = 31 to address = 00000402, at time:                  192
-# [34m[OPERATION][0m Write BYTE data = 41 to address = 00000403, at time:                  211
-# [32m[PASSED][0m Correct output data at address = 00000400, data: 41312111, at time:                  212
-# [34m[OPERATION][0m Write BYTE data = 11 to address = 10000400, at time:                  231
-# [32m[PASSED][0m Correct output data at address = 10000000, data: 00000011, at time:                  232
-# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 100004a0, at time:                  248
-# [32m[PASSED][0m Correct output data at address = 10000400, data: 00001234, at time:                  249
-# [34m[OPERATION][0m Write WORD data = efad1234 to address = 100004f0, at time:                  266
-# [32m[PASSED][0m Correct output data at address = 10000f00, data: efad1234, at time:                  267
-# [34m[OPERATION][0m Write BYTE data = 11 to address = 10001400, at time:                  286
-# [32m[PASSED][0m Correct output data at address = 10001000, data: 00000011, at time:                  287
-# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 100014a0, at time:                  303
-# [32m[PASSED][0m Correct output data at address = 10001400, data: 00001234, at time:                  304
-# [34m[OPERATION][0m Write WORD data = efad1234 to address = 100014f0, at time:                  321
-# [32m[PASSED][0m Correct output data at address = 10001ff0, data: efad1234, at time:                  322
-# [34m[OPERATION][0m Write BYTE data = 11 to address = 10002400, at time:                  341
-# [32m[PASSED][0m Correct output data at address = 10002000, data: 00000011, at time:                  342
-# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 100024a0, at time:                  358
-# [32m[PASSED][0m Correct output data at address = 10002400, data: 00001234, at time:                  359
-# [34m[OPERATION][0m Write WORD data = efad1234 to address = 100024f0, at time:                  376
-# [32m[PASSED][0m Correct output data at address = 10002ff0, data: efad1234, at time:                  377
-# [34m[OPERATION][0m Write BYTE data = 11 to address = 10003410, at time:                  396
-# [32m[PASSED][0m Correct output data at address = 10003010, data: 00000011, at time:                  397
-# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 10003410, at time:                  413
-# [32m[PASSED][0m Correct output data at address = 10003410, data: 00001234, at time:                  414
-# [34m[OPERATION][0m Write WORD data = efad1234 to address = 10003410, at time:                  431
-# [32m[PASSED][0m Correct output data at address = 10003f10, data: efad1234, at time:                  432
-# [34m[OPERATION][0m Write BYTE data = 11 to address = 10004f02, at time:                  451
-# [32m[PASSED][0m Correct output data at address = 10004f02, data: 00000011, at time:                  452
-# [34m[OPERATION][0m Write HALF WORD data = 1234 to address = 10004fa2, at time:                  468
-# [32m[PASSED][0m Correct output data at address = 10004f02, data: 00001234, at time:                  469
-# [34m[OPERATION][0m Write WORD data = efad1234 to address = 10004ff2, at time:                  486
-# [32m[PASSED][0m Correct output data at address = 10004ff2, data: efad1234, at time:                  487
-# [32m[PASSED][0m Correct output data at address = 10010000, data: 00000078, at time:                  611
-# [32m[PASSED][0m Correct output data at address = 10010001, data: 00005678, at time:                  612
-# [32m[PASSED][0m Correct output data at address = 10010030, data: 12345678, at time:                  613
-# [32m[PASSED][0m Correct output data at address = 10010010, data: 00000001, at time:                  705
-# [32m[PASSED][0m Correct output data at address = 10010021, data: 0000ef01, at time:                  706
-# [32m[PASSED][0m Correct output data at address = 1001003f, data: abcdef01, at time:                  707
-# [32m[PASSED][0m Correct output data at address = 10011030, data: 00000065, at time:                  831
-# [32m[PASSED][0m Correct output data at address = 100110f1, data: 00008765, at time:                  832
-# [32m[PASSED][0m Correct output data at address = 10011032, data: 43218765, at time:                  833
-# [32m[PASSED][0m Correct output data at address = 10011f10, data: 00000025, at time:                  925
-# [32m[PASSED][0m Correct output data at address = 100110ff, data: 00002025, at time:                  926
-# [32m[PASSED][0m Correct output data at address = 10011fff, data: 10232025, at time:                  927
-# ** Note: $stop    : ./lsu_tb.sv(331)
-#    Time: 1027 ps  Iteration: 0  Instance: /lsu_tb
-# Break in Module lsu_tb at ./lsu_tb.sv line 331
-# Stopped at ./lsu_tb.sv line 331
-#  exit
-# End time: 19:48:37 on Apr 04,2025, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# Loading work.controlLd
+# Loading work.mux4to1
+# Loading work.control
+# Loading work.pcDebugff
+# Loading work.validff
+add wave -position end  sim:/singlecycle/i_clk
+add wave -position end  sim:/singlecycle/i_reset
+add wave -position end  sim:/singlecycle/i_io_sw
+add wave -position end  sim:/singlecycle/o_pc_debug
+add wave -position end  sim:/singlecycle/o_io_ledr
+add wave -position end  sim:/singlecycle/o_io_ledg
+add wave -position end  sim:/singlecycle/o_io_hex0
+add wave -position end  sim:/singlecycle/o_io_hex1
+add wave -position end  sim:/singlecycle/o_io_hex2
+add wave -position end  sim:/singlecycle/o_io_hex3
+add wave -position end  sim:/singlecycle/o_io_hex4
+add wave -position end  sim:/singlecycle/o_io_hex5
+add wave -position end  sim:/singlecycle/o_io_hex6
+add wave -position end  sim:/singlecycle/o_io_hex7
+add wave -position end  sim:/singlecycle/o_io_lcd
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ntkhi  Hostname: DESKTOP-BU7HHRL  ProcessID: 11864
+#           Attempting to use alternate WLF file "./wlfti12i1i".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfti12i1i
+force -freeze sim:/singlecycle/i_clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/singlecycle/i_reset 0 0
+run
+force -freeze sim:/singlecycle/i_reset 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 05:36:17 on Apr 18,2025, Elapsed time: 0:03:49
+# Errors: 0, Warnings: 2

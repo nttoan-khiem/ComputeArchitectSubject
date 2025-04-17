@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module lsu(
     input logic i_clk,
     input logic i_reset,
@@ -304,3 +305,4 @@ assign r_button = {32{en_button}} & i_ph_button & {{8{i_mask[3]}}, {8{i_mask[2]}
 //master output ld data
 assign o_ldData = r_mem | r_ledr | r_ledg | r_seg30 | r_seg74 | r_lcd | r_sw | r_button;
 endmodule
+

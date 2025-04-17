@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module genImm(
     input logic [31:0] i_instruction,
     input logic [2:0] i_operation,
