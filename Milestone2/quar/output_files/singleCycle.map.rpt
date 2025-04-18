@@ -1,5 +1,5 @@
 Analysis & Synthesis report for singleCycle
-Thu Apr 17 18:05:21 2025
+Fri Apr 18 07:07:41 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -52,7 +52,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 17 18:05:21 2025           ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 18 07:07:41 2025           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; singleCycle                                     ;
 ; Top-level Entity Name              ; singlecycle                                     ;
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Device                                                                     ; EP2C70F896C6       ;                    ;
 ; Top-level entity name                                                      ; singlecycle        ; singleCycle        ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -165,29 +165,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+---------------------------------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+---------------------------------------+-------------------------------------------------------------+---------+
-; ../dump/inst.hex                 ; yes             ; User Hexadecimal (Intel-Format) File  ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/dump/inst.hex        ;         ;
-; ../src/validff.sv                ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/validff.sv       ;         ;
-; ../src/singlecycle.sv            ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/singlecycle.sv   ;         ;
-; ../src/registerSet.sv            ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/registerSet.sv   ;         ;
-; ../src/plus4.sv                  ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/plus4.sv         ;         ;
-; ../src/pcRegister.sv             ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/pcRegister.sv    ;         ;
-; ../src/pcDebugff.sv              ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/pcDebugff.sv     ;         ;
-; ../src/mux4to1.sv                ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/mux4to1.sv       ;         ;
-; ../src/mux2to1.sv                ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/mux2to1.sv       ;         ;
-; ../src/memory.sv                 ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/memory.sv        ;         ;
-; ../src/lsu.sv                    ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/lsu.sv           ;         ;
-; ../src/instMem.sv                ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/instMem.sv       ;         ;
-; ../src/genImm.sv                 ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/genImm.sv        ;         ;
-; ../src/controlLd.sv              ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/controlLd.sv     ;         ;
-; ../src/control.sv                ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/control.sv       ;         ;
-; ../src/branchControl.sv          ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/branchControl.sv ;         ;
-; ../src/alu.sv                    ; yes             ; User SystemVerilog HDL File           ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/alu.sv           ;         ;
-+----------------------------------+-----------------+---------------------------------------+-------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++----------------------------------------------------+-----------------+---------------------------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path                   ; Used in Netlist ; File Type                                   ; File Name with Absolute Path                                ; Library ;
++----------------------------------------------------+-----------------+---------------------------------------------+-------------------------------------------------------------+---------+
+; ../src/validff.sv                                  ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/validff.sv       ;         ;
+; ../src/singlecycle.sv                              ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/singlecycle.sv   ;         ;
+; ../src/registerSet.sv                              ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/registerSet.sv   ;         ;
+; ../src/plus4.sv                                    ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/plus4.sv         ;         ;
+; ../src/pcRegister.sv                               ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/pcRegister.sv    ;         ;
+; ../src/pcDebugff.sv                                ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/pcDebugff.sv     ;         ;
+; ../src/mux4to1.sv                                  ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/mux4to1.sv       ;         ;
+; ../src/mux2to1.sv                                  ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/mux2to1.sv       ;         ;
+; ../src/memory.sv                                   ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/memory.sv        ;         ;
+; ../src/lsu.sv                                      ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/lsu.sv           ;         ;
+; ../src/instMem.sv                                  ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/instMem.sv       ;         ;
+; ../src/genImm.sv                                   ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/genImm.sv        ;         ;
+; ../src/controlLd.sv                                ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/controlLd.sv     ;         ;
+; ../src/control.sv                                  ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/control.sv       ;         ;
+; ../src/branchControl.sv                            ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/branchControl.sv ;         ;
+; ../src/alu.sv                                      ; yes             ; User SystemVerilog HDL File                 ; C:/Users/ntkhi/Desktop/CTMT/Milestone2/src/alu.sv           ;         ;
+; /users/ntkhi/desktop/ctmt/milestone2/dump/inst.hex ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; /users/ntkhi/desktop/ctmt/milestone2/dump/inst.hex          ;         ;
++----------------------------------------------------+-----------------+---------------------------------------------+-------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -5638,7 +5638,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -5648,7 +5648,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Apr 17 18:04:45 2025
+    Info: Processing started: Fri Apr 18 07:07:23 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off singleCycle -c singleCycle
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /users/ntkhi/desktop/ctmt/milestone2/src/validff.sv
@@ -5698,7 +5698,7 @@ Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:muxControlJump
 Info (12128): Elaborating entity "plus4" for hierarchy "plus4:plus4Block"
 Info (12128): Elaborating entity "pcRegister" for hierarchy "pcRegister:pcRegisterBlock"
 Info (12128): Elaborating entity "instMem" for hierarchy "instMem:instMemoryBlock"
-Warning (10850): Verilog HDL warning at instMem.sv(8): number of words (232) in memory file does not match the number of elements in the address range [0:2047]
+Warning (10850): Verilog HDL warning at instMem.sv(8): number of words (272) in memory file does not match the number of elements in the address range [0:2047]
 Warning (10855): Verilog HDL warning at instMem.sv(7): initial value for variable mem should be constant
 Warning (10030): Net "mem" at instMem.sv(5) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "registerSet" for hierarchy "registerSet:registerFileBlock"
@@ -5717,22 +5717,22 @@ Info (12128): Elaborating entity "shiftRight" for hierarchy "alu:alublock|shiftR
 Info (12128): Elaborating entity "selOutputAlu" for hierarchy "alu:alublock|selOutputAlu:selectOutputLogicBlock"
 Info (12128): Elaborating entity "lsu" for hierarchy "lsu:lsuBlock"
 Info (12128): Elaborating entity "memory" for hierarchy "lsu:lsuBlock|memory:dataMemoryBlock"
-Warning (10850): Verilog HDL warning at memory.sv(13): number of words (232) in memory file does not match the number of elements in the address range [0:2047]
+Warning (10850): Verilog HDL warning at memory.sv(13): number of words (272) in memory file does not match the number of elements in the address range [0:2047]
 Warning (10855): Verilog HDL warning at memory.sv(12): initial value for variable mem should be constant
 Info (12128): Elaborating entity "controlLd" for hierarchy "controlLd:controlLoadLsuBlock"
 Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:controlWriteBackBlock"
 Info (12128): Elaborating entity "control" for hierarchy "control:masterControlBlock"
-Info (10264): Verilog HDL Case Statement information at control.sv(53): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at control.sv(77): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at control.sv(101): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at control.sv(117): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at control.sv(133): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at control.sv(175): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at control.sv(191): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at control.sv(207): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at control.sv(223): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at control.sv(250): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at control.sv(351): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(54): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(78): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(102): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(118): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(134): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(170): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(186): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(202): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(218): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(245): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at control.sv(346): all case item expressions in this case statement are onehot
 Info (12128): Elaborating entity "pcDebugff" for hierarchy "pcDebugff:pcDebugBlock"
 Info (12128): Elaborating entity "validff" for hierarchy "validff:validffBlock"
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
@@ -5937,9 +5937,9 @@ Info (21057): Implemented 283 device resources after synthesis - the final resou
     Info (21059): Implemented 185 output pins
     Info (21061): Implemented 60 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 200 warnings
-    Info: Peak virtual memory: 4850 megabytes
-    Info: Processing ended: Thu Apr 17 18:05:21 2025
-    Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 4852 megabytes
+    Info: Processing ended: Fri Apr 18 07:07:41 2025
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:17
 
 
