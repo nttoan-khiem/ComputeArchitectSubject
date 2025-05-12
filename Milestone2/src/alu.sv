@@ -23,6 +23,31 @@ selOperand selBlock(
     .i_b(bu2_operandB),
     .o_d(operandBToAdd)
 );
+logic [33:0] extendOpaCompUnsign;
+assign extendOpaCompUnsign = {{2{1'd0}}, i_operandA};
+logic [33:0] extendOpaCompSign;
+assign extendOpaCompSign = {{2{i_operandA[31]}}, i_operandA};
+logic [33:0] extendOpbCompUnsign;
+assign extendOpbCompUnsign = {{2{1'd0}}, i_operandB};
+logic [33:0] extendOpbCompSign;
+assign extendOpbCompSign = {{2{i_operandB[31]}}, i_operandB};
+logic [33:0] exeOpaComp, exeOpbCompTemp;
+controlSelComp SelecConpareOpa(
+    .i_sel(signalSelSign),
+    .i_a(extendOpaCompUnsign),
+    .i_b(extendOpaCompSign),
+    .o_d(exeOpaComp)
+);
+controlSelComp SelecConpareOpb(
+    .i_sel(signalSelSign),
+    .i_a(extendOpbCompUnsign),
+    .i_b(extendOpbCompSign),
+    .o_d(exeOpbCompTemp)
+);
+logic [33:0] exeOpbComp;
+assign exeOpbComp = ~exeOpbCompTemp + 34'd1;
+logic [33:0] resultComp;
+assign resultComp = exeOpaComp + exeOpbComp;
 logic [31:0] m_and;
 logic [31:0] m_or;
 logic [31:0] m_xor;
@@ -34,8 +59,8 @@ assign m_and = i_operandA & i_operandB;
 assign m_or = i_operandA | i_operandB;
 assign m_xor = i_operandA ^ i_operandB;
 assign adderTemp = extendOpa + operandBToAdd;
-assign m_slt = {{31{1'd0}}, adderTemp[31]};
-assign m_sltu = {{31{1'd0}}, adderTemp[32]};
+assign m_slt = {{31{1'd0}}, resultComp[33]};
+assign m_sltu = {{31{1'd0}}, resultComp[33]};
 assign m_add = adderTemp[31:0];
 assign m_lui = i_operandB;
 shiftLeft shiftLeftBlock (
@@ -71,6 +96,20 @@ module selOperand(
     input logic [32:0] i_a,
     input logic [32:0] i_b,
     output logic [32:0] o_d
+);
+always @(*) begin
+    case (i_sel)
+        1'b0: o_d = i_a;
+        1'b1: o_d = i_b; 
+    endcase
+end
+endmodule
+
+module selOperandComp(
+    input logic i_sel,
+    input logic [33:0] i_a,
+    input logic [33:0] i_b,
+    output logic [33:0] o_d
 );
 always @(*) begin
     case (i_sel)

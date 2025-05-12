@@ -42,6 +42,7 @@ pcRegister pcRegisterBlock(
     .o_data(pc_current)
 );
 instMem instMemoryBlock(
+    .i_reset(i_reset),
     .i_addr(pc_current),
     .o_data(inst_current)
 );

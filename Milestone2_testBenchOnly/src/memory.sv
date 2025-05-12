@@ -24,7 +24,7 @@ assign byteWEn1 = i_mask[1] & i_wren; //wr mask enb 1
 assign byteWEn2 = i_mask[2] & i_wren; //wr mask enb 2
 assign byteWEn3 = i_mask[3] & i_wren; //wr mask enb 3
 always @(posedge i_clk) begin //write control block and reset handle
-    if(!i_reset) begin 
+    if(i_reset) begin 
         for (int i = 0; i < 32768; i = i + 1)
             mem[i] <= 8'h00; // Reset all memory to 0
     end else begin 

@@ -1,0 +1,65 @@
+[*] COMPILE
+verilator --binary -Wall -Wno-UNUSEDSIGNAL --trace --sv --timing --trace-fst -O3 --compiler gcc -CFLAGS -std=gnu++20 -x-initial unique -x-assign unique --assert --build -j 0 --quiet -f ./flist
+%Warning-DECLFILENAME: ../00_src/../00_src/alu.sv:70:8: Filename 'alu' does not match MODULE name: 'selOperand'
+   70 | module selOperand(
+      |        ^~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/DECLFILENAME?v=5.034
+                       ... Use "/* verilator lint_off DECLFILENAME */" and lint_on around source to disable this message.
+%Warning-DECLFILENAME: ../00_src/../00_src/branchControl.sv:31:8: Filename 'branchControl' does not match MODULE name: 'xorLogic'
+   31 | module xorLogic (
+      |        ^~~~~~~~
+%Warning-DECLFILENAME: ../00_src/../00_src/registerSet.sv:60:8: Filename 'registerSet' does not match MODULE name: 'register32bit'
+   60 | module register32bit(
+      |        ^~~~~~~~~~~~~
+%Warning-IMPLICIT: ../00_src/../00_src/singlecycle.sv:176:13: Signal definition not found, creating implicitly: 'o_insn_vld'
+  176 |     .o_data(o_insn_vld)
+      |             ^~~~~~~~~~
+%Warning-WIDTHTRUNC: ../00_src/../00_src/memory.sv:32:16: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                        : ... note: In instance 'tbench.dut.lsuBlock.dataMemoryBlock'
+   32 |             mem[addr_0] <= i_wdata[7:0];
+      |                ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/memory.sv:35:16: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                        : ... note: In instance 'tbench.dut.lsuBlock.dataMemoryBlock'
+   35 |             mem[addr_1] <= i_wdata[15:8];
+      |                ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/memory.sv:38:16: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                        : ... note: In instance 'tbench.dut.lsuBlock.dataMemoryBlock'
+   38 |             mem[addr_2] <= i_wdata[23:16];
+      |                ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/memory.sv:41:16: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                        : ... note: In instance 'tbench.dut.lsuBlock.dataMemoryBlock'
+   41 |             mem[addr_3] <= i_wdata[31:24];
+      |                ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/memory.sv:46:40: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                        : ... note: In instance 'tbench.dut.lsuBlock.dataMemoryBlock'
+   46 |     o_rdata[7:0] = {8{i_mask[0]}} & mem[addr_0];
+      |                                        ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/memory.sv:47:41: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                        : ... note: In instance 'tbench.dut.lsuBlock.dataMemoryBlock'
+   47 |     o_rdata[15:8] = {8{i_mask[1]}} & mem[addr_1]; 
+      |                                         ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/memory.sv:48:42: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                        : ... note: In instance 'tbench.dut.lsuBlock.dataMemoryBlock'
+   48 |     o_rdata[23:16] = {8{i_mask[2]}} & mem[addr_2];
+      |                                          ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/memory.sv:49:42: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                        : ... note: In instance 'tbench.dut.lsuBlock.dataMemoryBlock'
+   49 |     o_rdata[31:24] = {8{i_mask[3]}} & mem[addr_3];  
+      |                                          ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/instMem.sv:17:22: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                         : ... note: In instance 'tbench.dut.instMemoryBlock'
+   17 |     o_data[7:0] = mem[addr_0];
+      |                      ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/instMem.sv:18:23: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                         : ... note: In instance 'tbench.dut.instMemoryBlock'
+   18 |     o_data[15:8] = mem[addr_1]; 
+      |                       ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/instMem.sv:19:24: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                         : ... note: In instance 'tbench.dut.instMemoryBlock'
+   19 |     o_data[23:16] = mem[addr_2];
+      |                        ^
+%Warning-WIDTHTRUNC: ../00_src/../00_src/instMem.sv:20:24: Bit extraction of array[32767:0] requires 15 bit index, not 16 bits.
+                                                         : ... note: In instance 'tbench.dut.instMemoryBlock'
+   20 |     o_data[31:24] = mem[addr_3];  
+      |                        ^
+make: *** [Makefile:31: comp] Error 1

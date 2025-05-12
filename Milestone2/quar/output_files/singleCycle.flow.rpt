@@ -1,5 +1,5 @@
 Flow report for singleCycle
-Fri Apr 18 07:08:13 2025
+Sat Apr 19 09:40:01 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -37,26 +37,26 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------------+
-; Flow Summary                                                                          ;
-+------------------------------------+--------------------------------------------------+
-; Flow Status                        ; MIF/HEX Update Failed - Fri Apr 18 07:08:13 2025 ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition  ;
-; Revision Name                      ; singleCycle                                      ;
-; Top-level Entity Name              ; singlecycle                                      ;
-; Family                             ; Cyclone II                                       ;
-; Device                             ; EP2C70F896C6                                     ;
-; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 60 / 68,416 ( < 1 % )                            ;
-;     Total combinational functions  ; 30 / 68,416 ( < 1 % )                            ;
-;     Dedicated logic registers      ; 60 / 68,416 ( < 1 % )                            ;
-; Total registers                    ; 60                                               ;
-; Total pins                         ; 223 / 622 ( 36 % )                               ;
-; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 0 / 1,152,000 ( 0 % )                            ;
-; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                                  ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                    ;
-+------------------------------------+--------------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Flow Failed - Sat Apr 19 09:40:01 2025          ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; singleCycle                                     ;
+; Top-level Entity Name              ; singlecycle                                     ;
+; Family                             ; Cyclone II                                      ;
+; Device                             ; EP2C35F672C6                                    ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 60 / 33,216 ( < 1 % )                           ;
+;     Total combinational functions  ; 30 / 33,216 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 60 / 33,216 ( < 1 % )                           ;
+; Total registers                    ; 60                                              ;
+; Total pins                         ; 223 / 475 ( 47 % )                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
++------------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,52 +64,48 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/18/2025 07:07:24 ;
+; Start date & time ; 04/19/2025 09:38:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; singleCycle         ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                ;
-+-------------------------------------+--------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+--------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 27332939166419.174493484406700 ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; 16764057                       ; --            ; singlecycle ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; singlecycle ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; singlecycle ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --          ; --         ;
-+-------------------------------------+--------------------------------+---------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                       ;
++-------------------------------------+---------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+---------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 27332939166419.174503031108588        ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; singlecycle ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; singlecycle ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; singlecycle ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --         ;
++-------------------------------------+---------------------------------------+---------------+-------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                             ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:17     ; 1.0                     ; 4852 MB             ; 00:00:16                           ;
-; Fitter                    ; 00:00:14     ; 1.0                     ; 4984 MB             ; 00:00:14                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 4571 MB             ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4549 MB             ; 00:00:01                           ;
-; MIF/HEX Update            ; 00:00:02     ; 1.0                     ; 4657 MB             ; 00:00:02                           ;
-; Total                     ; 00:00:40     ; --                      ; --                  ; 00:00:38                           ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:01:26     ; 1.0                     ; 4872 MB             ; 00:01:25                           ;
+; Fitter               ; 00:00:03     ; 1.0                     ; 4780 MB             ; 00:00:02                           ;
+; Total                ; 00:01:29     ; --                      ; --                  ; 00:01:27                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-BU7HHRL  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-BU7HHRL  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-BU7HHRL  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-BU7HHRL  ; Windows 7 ; 6.2        ; x86_64         ;
-; MIF/HEX Update            ; DESKTOP-BU7HHRL  ; Windows 7 ; 6.2        ; x86_64         ;
-+---------------------------+------------------+-----------+------------+----------------+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-BU7HHRL  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter               ; DESKTOP-BU7HHRL  ; Windows 7 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
 
 
 ------------
@@ -117,9 +113,6 @@ applicable agreement for further details.
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off singleCycle -c singleCycle
 quartus_fit --read_settings_files=off --write_settings_files=off singleCycle -c singleCycle
-quartus_asm --read_settings_files=off --write_settings_files=off singleCycle -c singleCycle
-quartus_sta singleCycle -c singleCycle
-quartus_cdb singleCycle -c singleCycle --update_mif
 
 
 
