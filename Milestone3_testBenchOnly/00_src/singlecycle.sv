@@ -24,6 +24,8 @@ module singlecycle(
 logic pc_sel_control;
 logic pipe_continue;
 logic pipe_passS1, pipe_passS2, pipe_passS3, pipe_passS4;
+wire pipe_clearStateFet, pipe_clearStateID, pipe_clearStateEX, pipe_clearStateMem;
+logic e_wrReg1, e_wrReg2, e_wrReg3;
 logic [31:0] pipe_alu;
 logic [31:0] pc_four;
 logic [31:0] pc_next;
@@ -54,7 +56,6 @@ instMem instMemoryBlock(
 //-------------------------Pipeline Fetch Stage1---------------------------
 logic [31:0] pipe_pcCurrentS1;
 logic [31:0] pipe_instCurrentS1;
-logic pipe_clearStateFet;
 register32bit pipeLineStage1Pc(
     .i_clk(i_clk),
     .i_rst(pipe_clearStateFet),
@@ -123,7 +124,7 @@ control masterControlBlockS1(
     .o_aluOp(),
     .o_memWrEnable(),
     .o_wbSel(),
-    .o_rdWrEnable(),
+    .o_rdWrEnable(e_wrReg1),
     .o_mask(),
     .o_insn_vld()
 );
@@ -134,7 +135,6 @@ logic [31:0] pipe_operandB;
 logic [31:0] pipe_rs1, pipe_rs2;
 logic [31:0] pipe_instCurrentS2;
 logic [31:0] pipe_pcCurrentS2;
-logic pipe_clearStateID;
 register32bit pipeLineStage2OperandA(
     .i_clk(i_clk),
     .i_rst(pipe_clearStateID),
@@ -153,8 +153,8 @@ register32bit pipeLineStage2Inst(
     .i_clk(i_clk),
     .i_rst(pipe_clearStateID),
     .i_wr_enable(pipe_passS2),
-    .i_wr_data(inst_current),
-    .o_rd_data(pipe_instCurrentS1)
+    .i_wr_data(pipe_instCurrentS1),
+    .o_rd_data(pipe_instCurrentS2)
 );
 register32bit pipeLineStage2pc(
     .i_clk(i_clk),
@@ -222,7 +222,7 @@ control masterControlBlockEXStage(
     .o_aluOp(alu_operation_control),
     .o_memWrEnable(),
     .o_wbSel(),
-    .o_rdWrEnable(),
+    .o_rdWrEnable(e_wrReg2),
     .o_mask(),
     .o_insn_vld()
 );
@@ -233,7 +233,6 @@ control masterControlBlockEXStage(
 //-------------------------Pipeline 3 EX Stage---------------------------
 logic [31:0] pipe_pcCurrentS3, pipe_instCurrentS3;
 logic pipe_brLess, pipe_brEqual;
-logic pipe_clearStateEX;
 register32bit pipeLineStage3ALU(
     .i_clk(i_clk),
     .i_rst(pipe_clearStateEX),
@@ -320,7 +319,7 @@ control masterControlBlock(
     .o_aluOp(),
     .o_memWrEnable(wrLsu_en_control),
     .o_wbSel(fw_selWbState4),
-    .o_rdWrEnable(fw_enWRegState4),
+    .o_rdWrEnable(e_wrReg3),
     .o_mask({loadUnsign_control,mask_control}),
     .o_insn_vld()
 );
@@ -335,7 +334,6 @@ control masterControlBlock(
 //
 //=======================================================================
 //-------------------Pipe line stage 4 mem-----------
-wire pipe_clearStateMem;
 wire [31:0] pipe_aluState4, pipe_lsuDataState4;
 wire [31:0] pipe_pcCurrentS4, pipe_instCurrentS4;
 register32bit pipeLineStage4AluData(
@@ -395,6 +393,29 @@ control masterControlBlock(
     .o_mask(),
     .o_insn_vld(validInst)
 );
+//=========================HARDZARD CONTROL WITHOUT FORWARD================
+controlHardzard ControlHardZardBlock(
+    .inst(inst_current),
+    .inst_s1(pipe_instCurrentS1),
+    .inst_s2(pipe_instCurrentS2),
+    .inst_s3(pipe_instCurrentS3),
+    .inst_s4(pipe_instCurrentS4),
+    .branch(pc_sel_control),
+    .e_wrReg1(e_wrReg1),
+    .e_wrReg2(e_wrReg2),
+    .e_wrReg3(e_wrReg3),
+    .e_wrReg4(wReg_en_control),
+    .pipe_continue(pipe_continue),
+    .pipe_passS1(pipe_passS1),
+    .pipe_passS2(pipe_passS2),
+    .pipe_passS3(pipe_passS3),
+    .pipe_passS4(pipe_passS4),
+    .pipe_clearStateFet(pipe_clearStateFet),
+    .pipe_clearStateID(pipe_clearStateID),
+    .pipe_clearStateEX(pipe_clearStateEX),
+    .pipe_clearStateMem(pipe_clearStateMem)
+)
+//=========================================================================
 //for debug
 /*
 logic o_insn_vld;
